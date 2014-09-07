@@ -20,4 +20,5 @@ Export-Package: rabbit.tracking,
  rabbit.tracking.internal.trackers;x-friends:="rabbit.tracking.mylyn,rabbit.tracking.java",
  rabbit.tracking.internal.util
 Eclipse-ExtensibleAPI: true
-Import-Package: org.eclipse.ui.texteditor
+Import-Package: org.eclipse.jdt.internal.ui.javaeditor,
+ org.eclipse.ui.texteditor

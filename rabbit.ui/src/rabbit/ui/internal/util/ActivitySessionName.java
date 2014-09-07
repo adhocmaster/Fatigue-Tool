@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package rabbit.data.access.model;
+package rabbit.ui.internal.util;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -22,53 +22,41 @@ import com.google.common.base.Objects;
 /**
  * Represents a name of a launch with the associated launch type ID.
  */
-public final class UserActivity {
+public final class ActivitySessionName {
 
-  private final String activityName;
-  private final String activityTypeId;
+  private final String activitySessionName;
 
   /**
-   * @param launchName the name of this launch.
-   * @param launchTypeId the launch type ID of this launch.
+   * @param activitySessionName the name of this activity.
    * @throws NullPointerException if any argument is null.
    */
-  public UserActivity(String launchName, String launchTypeId) {
-    this.activityName = checkNotNull(launchName);
-    this.activityTypeId = checkNotNull(launchTypeId);
+  public ActivitySessionName(String activitySessionName) {
+    this.activitySessionName = checkNotNull(activitySessionName);
   }
 
   /**
-   * @return the the name of this launch.
+   * @return the the name of this activity session.
    */
-  public String getActivityName() {
-    return activityName;
-  }
-
-  /**
-   * @return the launch type ID of this launch.
-   */
-  public String getActivityTypeId() {
-    return activityTypeId;
+  public String getActivitySessionName() {
+    return activitySessionName;
   }
 
   @Override
   public String toString() {
     return Objects.toStringHelper(this)
-        .addValue(getActivityName())
-        .addValue(getActivityTypeId()).toString();
+        .addValue(getActivitySessionName()).toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(getActivityName(), getActivityTypeId());
+    return Objects.hashCode(getActivitySessionName());
   }
 
   @Override
   public boolean equals(Object obj) {
-    if (obj instanceof UserActivity) {
-    	UserActivity l = (UserActivity) obj;
-      return Objects.equal(getActivityName(), l.getActivityName())
-          && Objects.equal(getActivityTypeId(), l.getActivityTypeId());
+    if (obj instanceof ActivitySessionName) {
+      ActivitySessionName l = (ActivitySessionName) obj;
+      return Objects.equal(getActivitySessionName(), l.getActivitySessionName());
     }
     return false;
   }

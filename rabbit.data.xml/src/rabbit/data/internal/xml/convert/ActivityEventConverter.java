@@ -30,8 +30,9 @@ public class ActivityEventConverter extends
   @Override
   protected ActivityEventType doConvert(ActivityEvent element) {
 	ActivityEventType type = new ActivityEventType();
-    type.setActivityId(element.getWorkbenchPart().getSite().getId());
-    type.setCount(1);
+    type.setActivitySession(element.getActivitySession());
+    type.setDuration(element.getInterval().toDurationMillis());
+    type.setEditSpeed(element.getEditSpeed());
     return type;
   }
 

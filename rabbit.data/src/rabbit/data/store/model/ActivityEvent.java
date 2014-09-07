@@ -17,6 +17,7 @@ package rabbit.data.store.model;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.ui.IWorkbenchPart;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
@@ -24,9 +25,10 @@ import org.joda.time.Interval;
 /**
  * Represents a workbench activity event.
  */
-public class ActivityEvent extends DiscreteEvent {
+public class ActivityEvent extends ContinuousEvent {
 
-  private final IWorkbenchPart workbenchPart;
+  private final String activitySession;
+  private final Double editSpeed;
 
   /**
    * Constructs a new event.
@@ -35,17 +37,27 @@ public class ActivityEvent extends DiscreteEvent {
    * @param part The workbench part.
    * @throws NullPointerException If any of the arguments are null.
    */
-  public ActivityEvent(DateTime time, IWorkbenchPart part) {
-    super(time);
-    this.workbenchPart = checkNotNull(part);
+  public ActivityEvent(Interval interval, String activitySession, double editSpeed) {
+    super(interval);
+    this.activitySession = checkNotNull(activitySession);
+    this.editSpeed = checkNotNull(editSpeed);
   }
 
+  /**
+   * Gets the activityDuration.
+   * 
+   * @return The activity duration.
+   */
+  public final String getActivitySession() {
+	    return activitySession;
+  }
+  
   /**
    * Gets the workbench part.
    * 
    * @return The workbench part.
    */
-  public final IWorkbenchPart getWorkbenchPart() {
-    return workbenchPart;
+  public final double getEditSpeed() {
+	    return editSpeed;
   }
 }

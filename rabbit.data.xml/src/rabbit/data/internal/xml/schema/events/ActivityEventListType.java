@@ -22,11 +22,11 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="commandEventListType">
+ * &lt;complexType name="activityEventListType">
  *   &lt;complexContent>
  *     &lt;extension base="{}eventGroupType">
  *       &lt;sequence>
- *         &lt;element name="commandEvent" type="{}commandEventType" maxOccurs="unbounded"/>
+ *         &lt;element name="activityEvent" type="{}activityEventListType" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>

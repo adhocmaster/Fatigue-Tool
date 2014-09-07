@@ -50,7 +50,7 @@
             parent="rabbit.ui.pages.eclipseUsage">
       </page>
        <page
-            class="rabbit.ui.internal.pages.UserPage"
+            class="rabbit.ui.internal.pages.ActivityPage"
             description="User Activity"
             icon="icons/full/obj16/edit_icon.gif"
             id="rabbit.ui.pages.activity"

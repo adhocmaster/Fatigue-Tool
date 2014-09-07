@@ -22,8 +22,9 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;complexType name="activityEventType">
  *   &lt;complexContent>
- *     &lt;extension base="{}countEventType">
- *       &lt;attribute name="commandId" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *     &lt;extension base="{}durationEventType">
+ *       &lt;attribute name="activitySession" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="editSpeed" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -34,34 +35,60 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "activityEventType")
 public class ActivityEventType
-    extends CountEventType
+    extends DurationEventType
 {
 
     @XmlAttribute(required = true)
-    protected String activityId;
+    protected String activitySession;
+    @XmlAttribute(required = true)
+    protected Double editSpeed;
 
     /**
-     * Gets the value of the commandId property.
+     * Gets the value of the activitySession property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getActivityId() {
-        return activityId;
+    public String getActivitySession() {
+        return activitySession;
     }
 
     /**
-     * Sets the value of the commandId property.
+     * Sets the value of the activitySession property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setActivityId(String value) {
-        this.activityId = value;
+    public void setActivitySession(String value) {
+        this.activitySession = value;
+    }
+    
+    /**
+     * Gets the value of the editSpeed property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public Double getEditSpeed() {
+        return editSpeed;
+    }
+
+    /**
+     * Sets the value of the editSpeed property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEditSpeed(Double value) {
+        this.editSpeed = value;
     }
 
 }

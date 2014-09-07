@@ -28,15 +28,16 @@ public class ActivityEventTypeMerger extends AbstractMerger<ActivityEventType> {
   @Override
   protected ActivityEventType doMerge(ActivityEventType t1, ActivityEventType t2) {
 	ActivityEventType result = new ActivityEventType();
-    result.setActivityId(t1.getActivityId());
-    result.setCount(t1.getCount() + t2.getCount());
+    result.setActivitySession(t1.getActivitySession());
+    result.setDuration(t1.getDuration() + t2.getDuration());
+    result.setEditSpeed(t1.getEditSpeed() + t2.getEditSpeed());
     return result;
   }
 
   @Override
   public boolean doIsMergeable(ActivityEventType t1, ActivityEventType t2) {
-    return (t1.getActivityId() != null)
-        && (t1.getActivityId().equals(t2.getActivityId()));
+    return (t1.getActivitySession() != null)
+        && (t1.getActivitySession().equals(t2.getActivitySession()));
   }
 
 }

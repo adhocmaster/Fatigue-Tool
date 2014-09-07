@@ -11,9 +11,6 @@
             class="rabbit.tracking.internal.trackers.FileTracker">
       </tracker>
       <tracker
-            class="rabbit.tracking.internal.trackers.ActivityTracker">
-      </tracker>
-      <tracker
             class="rabbit.tracking.internal.trackers.LaunchTracker">
       </tracker>
       <tracker

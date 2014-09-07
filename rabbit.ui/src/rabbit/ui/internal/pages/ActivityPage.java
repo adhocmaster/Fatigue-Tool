@@ -18,6 +18,7 @@ package rabbit.ui.internal.pages;
 import static com.google.common.base.Predicates.instanceOf;
 import static rabbit.ui.internal.pages.Category.ACTIVITY;
 import static rabbit.ui.internal.pages.Category.DATE;
+import static rabbit.ui.internal.pages.Category.WORKSPACE;
 import static rabbit.ui.internal.viewers.Viewers.newTreeViewerColumn;
 
 import java.util.Collection;
@@ -42,27 +43,28 @@ import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
 import rabbit.data.access.IAccessor;
-import rabbit.data.access.model.ILaunchData;
-import rabbit.data.access.model.UserActivity;
+import rabbit.data.access.model.IActivityData;
+import rabbit.data.access.model.WorkspaceStorage;
 import rabbit.data.handler.DataHandler;
 import rabbit.ui.Preference;
-import rabbit.ui.internal.treebuilders.LaunchDataTreeBuilder;
-import rabbit.ui.internal.treebuilders.LaunchDataTreeBuilder.ILaunchDataProvider;
+import rabbit.ui.internal.treebuilders.ActivityDataTreeBuilder;
+import rabbit.ui.internal.treebuilders.ActivityDataTreeBuilder.IActivityDataProvider;
+import rabbit.ui.internal.util.ActivitySessionName;
 import rabbit.ui.internal.util.Categorizer;
 import rabbit.ui.internal.util.CategoryProvider;
 import rabbit.ui.internal.util.ICategorizer;
 import rabbit.ui.internal.util.IConverter;
+import rabbit.ui.internal.util.TreePathActivityDurationConverter;
+import rabbit.ui.internal.util.TreePathDoubleConverter;
 import rabbit.ui.internal.util.TreePathDurationConverter;
-import rabbit.ui.internal.util.TreePathIntConverter;
 import rabbit.ui.internal.util.TreePathValueProvider;
+import rabbit.ui.internal.viewers.ActivityLabelProvider;
 import rabbit.ui.internal.viewers.CompositeCellLabelProvider;
 import rabbit.ui.internal.viewers.DateLabelProvider;
 import rabbit.ui.internal.viewers.FilterableTreePathContentProvider;
-import rabbit.ui.internal.viewers.LaunchLabelProvider;
-import rabbit.ui.internal.viewers.ResourceLabelProvider;
 import rabbit.ui.internal.viewers.TreePathContentProvider;
+import rabbit.ui.internal.viewers.TreePathDoubleLabelProvider;
 import rabbit.ui.internal.viewers.TreePathDurationLabelProvider;
-import rabbit.ui.internal.viewers.TreePathIntLabelProvider;
 import rabbit.ui.internal.viewers.TreePathPatternFilter;
 import rabbit.ui.internal.viewers.TreeViewerCellPainter;
 import rabbit.ui.internal.viewers.TreeViewerColumnSorter;
@@ -76,36 +78,35 @@ import com.google.common.collect.ImmutableMap;
 /**
  * A page for displaying launch events.
  */
-public class UserPage extends AbsPage {
+public class ActivityPage extends AbsPage {
 
   private FilteredTree filteredTree;
   private CategoryProvider categoryProvider;
   private TreePathValueProvider durationProvider;
-  private TreePathValueProvider countProvider;
+  private TreePathValueProvider editSpeedProvider;
   private TreePathContentProvider contentProvider;
 
-  public UserPage() {}
+  public ActivityPage() {}
 
   @Override
   public void createContents(Composite parent) {
-    Category[] supported = {ACTIVITY, DATE};
+    Category[] supported = {WORKSPACE, DATE, ACTIVITY};
     categoryProvider = new CategoryProvider(supported, ACTIVITY);
     categoryProvider.addObserver(this);
 
     contentProvider = new TreePathContentProvider(
-        new LaunchDataTreeBuilder(categoryProvider));
+        new ActivityDataTreeBuilder(categoryProvider));
     contentProvider.addObserver(this);
 
     durationProvider = createDurationValueProvider();
     durationProvider.addObserver(this);
-
-    countProvider = createCountValueProvider();
-    countProvider.addObserver(this);
+    
+    editSpeedProvider = createEditSpeedValueProvider();
+    editSpeedProvider.addObserver(this);
 
     // The main label provider for the first column:
     CompositeCellLabelProvider mainLabels = new CompositeCellLabelProvider(
-        new LaunchLabelProvider(),
-        new ResourceLabelProvider(),
+        new ActivityLabelProvider(),
         new DateLabelProvider(),
         new WorkspaceStorageLabelProvider());
 
@@ -114,47 +115,31 @@ public class UserPage extends AbsPage {
         new TreePathPatternFilter(mainLabels));
     TreeViewer viewer = filteredTree.getViewer();
     FilterableTreePathContentProvider filteredContentProvider =
-        new FilterableTreePathContentProvider(contentProvider);
-    filteredContentProvider.addFilter(instanceOf(Integer.class));
+         new FilterableTreePathContentProvider(contentProvider);    
     filteredContentProvider.addFilter(instanceOf(Duration.class));
+    filteredContentProvider.addFilter(instanceOf(Double.class));
     viewer.setContentProvider(filteredContentProvider);
 
     // Column sorters:
     TreeViewerColumnSorter labelSorter =
         new InternalTreeViewerColumnLabelSorter(viewer, mainLabels);
-    TreeViewerColumnSorter countSorter =
-        new TreeViewerColumnValueSorter(viewer, countProvider);
     TreeViewerColumnSorter durationSorter =
         new TreeViewerColumnValueSorter(viewer, durationProvider);
+    TreeViewerColumnSorter editSpeedSorter =
+            new TreeViewerColumnValueSorter(viewer, editSpeedProvider);
 
     // The columns:
 
     TreeViewerColumn mainColumn =
-        newTreeViewerColumn(viewer, SWT.LEFT, "Name", 200);
+        newTreeViewerColumn(viewer, SWT.LEFT, "Activity Session", 400);
     mainColumn.getColumn().addSelectionListener(labelSorter);
     ILabelDecorator decorator =
         PlatformUI.getWorkbench().getDecoratorManager().getLabelDecorator();
     mainColumn.setLabelProvider(new DecoratingStyledCellLabelProvider(
         mainLabels, decorator, null));
 
-    TreeViewerColumn countColumn =
-        newTreeViewerColumn(viewer, SWT.RIGHT, "Count", 100);
-    countColumn.getColumn().addSelectionListener(countSorter);
-    countColumn.setLabelProvider(
-        new TreePathIntLabelProvider(countProvider, mainLabels));
-
-    TreeViewerColumn countGraphColumn =
-        newTreeViewerColumn(viewer, SWT.LEFT, "", 100);
-    countGraphColumn.getColumn().addSelectionListener(countSorter);
-    countGraphColumn.setLabelProvider(new TreeViewerCellPainter(countProvider) {
-      @Override
-      protected Color createColor(Display display) {
-        return new Color(display, 118, 146, 60);
-      }
-    });
-
     TreeViewerColumn durationColumn =
-        newTreeViewerColumn(viewer, SWT.RIGHT, "Total Duration", 150);
+        newTreeViewerColumn(viewer, SWT.RIGHT, "Duration", 50);
     durationColumn.getColumn().addSelectionListener(durationSorter);
     durationColumn.setLabelProvider(
         new TreePathDurationLabelProvider(durationProvider, mainLabels));
@@ -162,8 +147,24 @@ public class UserPage extends AbsPage {
     TreeViewerColumn durationGraphColumn =
         newTreeViewerColumn(viewer, SWT.LEFT, "", 100);
     durationGraphColumn.getColumn().addSelectionListener(durationSorter);
-    durationGraphColumn.setLabelProvider(new TreeViewerCellPainter(
-        durationProvider) {
+    durationGraphColumn.setLabelProvider(new TreeViewerCellPainter(durationProvider) {
+      @Override
+      protected Color createColor(Display display) {
+        return new Color(display, 118, 146, 60);
+      }
+    });
+
+    TreeViewerColumn speedColumn =
+        newTreeViewerColumn(viewer, SWT.RIGHT, "Edit Speed/Second", 100);
+    speedColumn.getColumn().addSelectionListener(editSpeedSorter);
+    speedColumn.setLabelProvider(
+        new TreePathDoubleLabelProvider(editSpeedProvider, mainLabels));
+
+    TreeViewerColumn speedGraphColumn =
+        newTreeViewerColumn(viewer, SWT.LEFT, "", 100);
+    speedGraphColumn.getColumn().addSelectionListener(editSpeedSorter);
+    speedGraphColumn.setLabelProvider(new TreeViewerCellPainter(
+    		editSpeedProvider) {
       @Override
       protected Color createColor(Display display) {
         return new Color(display, 49, 132, 155);
@@ -177,13 +178,15 @@ public class UserPage extends AbsPage {
         .enableFilterControlAction(filteredTree, true)
         .enableTreeAction(filteredTree.getViewer())
         .enableGroupByAction(categoryProvider)
-        .enableColorByAction(durationProvider, countProvider)
+        .enableColorByAction(durationProvider, editSpeedProvider)
 
         .addGroupByAction(ACTIVITY)
         .addGroupByAction(DATE, ACTIVITY)
+        .addGroupByAction(WORKSPACE, ACTIVITY)
 
         .addColorByAction(ACTIVITY)
         .addColorByAction(DATE)
+        .addColorByAction(WORKSPACE)
         .build();
 
     for (IContributionItem item : items) {
@@ -195,12 +198,12 @@ public class UserPage extends AbsPage {
   @Override
   public Job updateJob(Preference pref) {
     TreeViewer viewer = filteredTree.getViewer();
-    return new UpdateJob<ILaunchData>(viewer, pref, getAccessor()) {
+    return new UpdateJob<IActivityData>(viewer, pref, getAccessor()) {
       @Override
-      protected Object getInput(final Collection<ILaunchData> data) {
-        return new ILaunchDataProvider() {
+      protected Object getInput(final Collection<IActivityData> data) {
+        return new IActivityDataProvider() {
           @Override
-          public Collection<ILaunchData> get() {
+          public Collection<IActivityData> get() {
             return data;
           }
         };
@@ -232,38 +235,39 @@ public class UserPage extends AbsPage {
   @Override
   protected void setVisualCategory(Category category) {
     durationProvider.setVisualCategory(category);
-    countProvider.setVisualCategory(category);
+    editSpeedProvider.setVisualCategory(category);
   }
 
   @Override
   protected void updateMaxValue() {
     durationProvider.setMaxValue(durationProvider.getVisualCategory());
-    countProvider.setMaxValue(countProvider.getVisualCategory());
+    editSpeedProvider.setMaxValue(editSpeedProvider.getVisualCategory());
   }
 
   private TreePathValueProvider createDurationValueProvider() {
     ICategorizer categorizer = createCategorizer();
-    IConverter<TreePath> converter = new TreePathDurationConverter();
+    IConverter<TreePath> converter = new TreePathActivityDurationConverter();
     return new TreePathValueProvider(
         categorizer, contentProvider, converter, ACTIVITY);
   }
 
-  private TreePathValueProvider createCountValueProvider() {
+  private TreePathValueProvider createEditSpeedValueProvider() {
     ICategorizer categorizer = createCategorizer();
-    IConverter<TreePath> converter = new TreePathIntConverter();
+    IConverter<TreePath> converter = new TreePathDoubleConverter();
     return new TreePathValueProvider(
         categorizer, contentProvider, converter, ACTIVITY);
   }
 
   private ICategorizer createCategorizer() {
     Map<Predicate<Object>, Category> categories = ImmutableMap.of(
-        instanceOf(UserActivity.class), ACTIVITY,
-        instanceOf(LocalDate.class), DATE);
+        instanceOf(ActivitySessionName.class), ACTIVITY,
+        instanceOf(LocalDate.class), DATE,
+        instanceOf(WorkspaceStorage.class), WORKSPACE);
     ICategorizer categorizer = new Categorizer(categories);
     return categorizer;
   }
 
-  private IAccessor<ILaunchData> getAccessor() {
-    return DataHandler.getAccessor(ILaunchData.class);
+  private IAccessor<IActivityData> getAccessor() {
+    return DataHandler.getAccessor(IActivityData.class);
   }
 }

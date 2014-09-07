@@ -16,6 +16,7 @@
 package rabbit.data.internal.xml.access;
 
 import rabbit.data.access.IAccessor;
+import rabbit.data.access.model.IActivityData;
 import rabbit.data.access.model.ICommandData;
 import rabbit.data.access.model.IFileData;
 import rabbit.data.access.model.IJavaData;
@@ -64,6 +65,7 @@ public class AccessorModuleTest {
         {new TypeLiteral<IAccessor<ICommandData>>     () {}, CommandDataAccessor     .class},
         {new TypeLiteral<IAccessor<IFileData>>        () {}, FileDataAccessor        .class},
         {new TypeLiteral<IAccessor<IJavaData>>        () {}, JavaDataAccessor        .class},
+        {new TypeLiteral<IAccessor<IActivityData>>    () {}, ActivityDataAccessor    .class},
         {new TypeLiteral<IAccessor<ILaunchData>>      () {}, LaunchDataAccessor      .class},
         {new TypeLiteral<IAccessor<IPartData>>        () {}, PartDataAccessor        .class},
         {new TypeLiteral<IAccessor<IPerspectiveData>> () {}, PerspectiveDataAccessor .class},

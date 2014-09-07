@@ -15,32 +15,30 @@
  */
 package rabbit.data.internal.xml.access;
 
-import rabbit.data.access.model.ICommandData;
+import java.util.Collection;
+
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.commands.ICommandService;
+import org.joda.time.Duration;
+import org.joda.time.LocalDate;
+
+import rabbit.data.access.model.IActivityData;
 import rabbit.data.access.model.WorkspaceStorage;
-import rabbit.data.internal.access.model.CommandData;
+import rabbit.data.internal.access.model.ActivityData;
 import rabbit.data.internal.xml.IDataStore;
 import rabbit.data.internal.xml.StoreNames;
 import rabbit.data.internal.xml.schema.events.ActivityEventListType;
 import rabbit.data.internal.xml.schema.events.ActivityEventType;
-import rabbit.data.internal.xml.schema.events.CommandEventListType;
-import rabbit.data.internal.xml.schema.events.CommandEventType;
 import rabbit.data.internal.xml.schema.events.EventListType;
 
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
-import org.eclipse.core.commands.Command;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.commands.ICommandService;
-import org.joda.time.LocalDate;
-
-import java.util.Collection;
-
 /**
  * Accesses command event data.
  */
 public class ActivityDataAccessor extends
-    AbstractAccessor<ICommandData, ActivityEventType, ActivityEventListType> {
+    AbstractAccessor<IActivityData, ActivityEventType, ActivityEventListType> {
 
   /**
    * Constructor.
@@ -54,10 +52,9 @@ public class ActivityDataAccessor extends
   }
 
   @Override
-  protected ICommandData createDataNode(
+  protected IActivityData createDataNode(
       LocalDate date, WorkspaceStorage ws, ActivityEventType type) throws Exception {
-    Command cmd = commandService().getCommand(type.getActivityId());
-    return new CommandData(date, ws, cmd, type.getCount());
+	return new ActivityData(date, ws, type.getActivitySession(), new Duration(type.getDuration()), type.getEditSpeed());
   }
 
   @Override
@@ -68,13 +65,5 @@ public class ActivityDataAccessor extends
   @Override
   protected Collection<ActivityEventType> getElements(ActivityEventListType list) {
     return list.getActivityEvent();
-  }
-
-  /**
-   * @return The workbench command service.
-   */
-  private ICommandService commandService() {
-    return (ICommandService) 
-        PlatformUI.getWorkbench().getService(ICommandService.class);
   }
 }
