@@ -127,6 +127,14 @@ public class ObjectFactory {
     public ActivityEventListType createActivityEventListType() {
         return new ActivityEventListType();
     }
+    
+    /**
+     * Create an instance of {@link FocusEventListType }
+     * 
+     */
+    public FocusEventListType createFocusEventListType() {
+        return new FocusEventListType();
+    }
 
     /**
      * Create an instance of {@link SessionEventType }

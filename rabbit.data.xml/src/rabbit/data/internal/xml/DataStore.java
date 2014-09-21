@@ -39,6 +39,7 @@ public enum DataStore implements IDataStore {
   //@formatter:off
   COMMAND_STORE     ("commandEvents"),
   ACTIVITY_STORE    ("activityEvents"),
+  FOCUS_STORE    	("focusEvents"),
   PART_STORE        ("partEvents"),
   PERSPECTIVE_STORE ("perspectiveEvents"),
   FILE_STORE        ("fileEvents"),

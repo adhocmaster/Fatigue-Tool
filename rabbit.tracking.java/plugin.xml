@@ -6,6 +6,12 @@
       <tracker
             class="rabbit.tracking.internal.trackers.JavaTracker">
       </tracker>
+      <tracker
+            class="rabbit.tracking.internal.trackers.UserActivityTracker">
+      </tracker>
+      <tracker
+            class="rabbit.tracking.internal.trackers.FocusTracker">
+      </tracker>
    </extension>
 
 </plugin>

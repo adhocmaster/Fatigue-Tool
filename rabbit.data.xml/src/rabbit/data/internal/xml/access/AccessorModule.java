@@ -19,6 +19,7 @@ import rabbit.data.access.IAccessor;
 import rabbit.data.access.model.IActivityData;
 import rabbit.data.access.model.ICommandData;
 import rabbit.data.access.model.IFileData;
+import rabbit.data.access.model.IFocusData;
 import rabbit.data.access.model.IJavaData;
 import rabbit.data.access.model.ILaunchData;
 import rabbit.data.access.model.IPartData;
@@ -40,6 +41,7 @@ public class AccessorModule extends AbstractModule {
     bind(new TypeLiteral<IAccessor<IFileData>>() {})        .to(FileDataAccessor.class);
     bind(new TypeLiteral<IAccessor<IJavaData>>() {})        .to(JavaDataAccessor.class);
     bind(new TypeLiteral<IAccessor<IActivityData>>() {})    .to(ActivityDataAccessor.class);
+    bind(new TypeLiteral<IAccessor<IFocusData>>() {})    	.to(FocusDataAccessor.class);
     bind(new TypeLiteral<IAccessor<ILaunchData>>() {})      .to(LaunchDataAccessor.class);
     bind(new TypeLiteral<IAccessor<IPartData>>() {})        .to(PartDataAccessor.class);
     bind(new TypeLiteral<IAccessor<IPerspectiveData>>() {}) .to(PerspectiveDataAccessor.class);

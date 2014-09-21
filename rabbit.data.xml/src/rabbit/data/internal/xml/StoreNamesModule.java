@@ -17,6 +17,9 @@ public class StoreNamesModule extends AbstractModule {
     	.annotatedWith(Names.named(StoreNames.ACTIVITY_STORE))
     	.toInstance(DataStore.ACTIVITY_STORE);
     bind(IDataStore.class)
+		.annotatedWith(Names.named(StoreNames.FOCUS_STORE))
+		.toInstance(DataStore.FOCUS_STORE);
+    bind(IDataStore.class)
         .annotatedWith(Names.named(StoreNames.FILE_STORE))
         .toInstance(DataStore.FILE_STORE);
     bind(IDataStore.class)

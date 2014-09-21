@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="commandEvents" type="{}commandEventListType" maxOccurs="unbounded"/>
  *         &lt;element name="activityEvents" type="{}activityEventListType" maxOccurs="unbounded"/>
+ *         &lt;element name="focusEvents" type="{}focusEventListType" maxOccurs="unbounded"/>
  *         &lt;element name="partEvents" type="{}partEventListType" maxOccurs="unbounded"/>
  *         &lt;element name="fileEvents" type="{}fileEventListType" maxOccurs="unbounded"/>
  *         &lt;element name="perspectiveEvents" type="{}perspectiveEventListType" maxOccurs="unbounded"/>
@@ -47,6 +48,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "eventListType", propOrder = {
     "commandEvents",
     "activityEvents",
+    "focusEvents",
     "partEvents",
     "fileEvents",
     "perspectiveEvents",
@@ -61,6 +63,8 @@ public class EventListType {
     protected List<CommandEventListType> commandEvents;
     @XmlElement(required = true)
     protected List<ActivityEventListType> activityEvents;
+    @XmlElement(required = true)
+    protected List<FocusEventListType> focusEvents;
     @XmlElement(required = true)
     protected List<PartEventListType> partEvents;
     @XmlElement(required = true)
@@ -106,7 +110,7 @@ public class EventListType {
     }
     
     /**
-     * Gets the value of the commandEvents property.
+     * Gets the value of the activityEvents property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
@@ -117,13 +121,13 @@ public class EventListType {
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCommandEvents().add(newItem);
+     *    getActivityEvents().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link CommandEventListType }
+     * {@link ActivityEventListType }
      * 
      * 
      */
@@ -132,6 +136,35 @@ public class EventListType {
         	activityEvents = new ArrayList<ActivityEventListType>();
         }
         return this.activityEvents;
+    }
+    
+    /**
+     * Gets the value of the focusEvents property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the commandEvents property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFocusEvents().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link FocusEventListType }
+     * 
+     * 
+     */
+    public List<FocusEventListType> getFocusEvents() {
+        if (focusEvents == null) {
+        	focusEvents = new ArrayList<FocusEventListType>();
+        }
+        return this.focusEvents;
     }
 
     /**
