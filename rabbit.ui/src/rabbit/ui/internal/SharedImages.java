@@ -38,8 +38,11 @@ public class SharedImages {
   /** Calendar image. */
   public static final ImageDescriptor CALENDAR = getObj16("calendar.png");
   
-  /** Calendar image. */
+  /** Activity image. */
   public static final ImageDescriptor ACTIVITY = getObj16("icon_edit.gif");
+  
+  /** Focus image. */
+  public static final ImageDescriptor FOCUS = getObj16("icon_edit.gif");
 
   /** Generic element image. */
   public static final ImageDescriptor ELEMENT = getObj16("element.gif");

@@ -64,7 +64,7 @@ public class FocusEventListType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link ActivityEventType }
+     * {@link FocusEventType }
      * 
      * 
      */

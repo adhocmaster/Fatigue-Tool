@@ -20,16 +20,16 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.PlatformUI;
 
-import rabbit.ui.internal.util.ActivitySessionName;
+import rabbit.ui.internal.util.FocusSessionName;
 
 /**
  * Label provider for launches.
  */
-public final class ActivityLabelProvider extends NullLabelProvider {
+public final class FocusLabelProvider extends NullLabelProvider {
 
   private final Color gray;
 
-  public ActivityLabelProvider() {
+  public FocusLabelProvider() {
 	gray = PlatformUI.getWorkbench().getDisplay()
 	          .getSystemColor(SWT.COLOR_DARK_GRAY);
   }
@@ -38,7 +38,7 @@ public final class ActivityLabelProvider extends NullLabelProvider {
   public Color getForeground(Object element) {
     if (element == null) {
       return gray;
-    } else if (!(element instanceof ActivitySessionName)) {
+    } else if (!(element instanceof FocusSessionName)) {
       return gray;
     }
     return super.getForeground(element);
@@ -51,8 +51,8 @@ public final class ActivityLabelProvider extends NullLabelProvider {
 
   @Override
   public String getText(Object element) {
-    if (element instanceof ActivitySessionName) {
-      return ((ActivitySessionName) element).getActivitySessionName();
+    if (element instanceof FocusSessionName) {
+      return ((FocusSessionName) element).getFocusSessionName();
     }
     return super.getText(element);
   }

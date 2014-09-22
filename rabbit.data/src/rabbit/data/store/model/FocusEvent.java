@@ -23,7 +23,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Interval;
 
 /**
- * Represents a workbench activity event.
+ * Represents a workbench focus event.
  */
 public class FocusEvent extends DiscreteEvent {
 
@@ -42,9 +42,9 @@ public class FocusEvent extends DiscreteEvent {
   }
 
   /**
-   * Gets the activityDuration.
+   * Gets the focusSession.
    * 
-   * @return The activity duration.
+   * @return The focus session ID.
    */
   public final String getFocusSession() {
 	    return focusSession;

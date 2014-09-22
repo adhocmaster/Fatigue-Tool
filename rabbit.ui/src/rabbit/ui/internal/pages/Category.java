@@ -70,6 +70,9 @@ public enum Category implements ICategory {
   
   /** User category. */
   ACTIVITY("Activity", SharedImages.ACTIVITY),
+  
+  /** User category. */
+  FOCUS("Focus", SharedImages.FOCUS),
 
   /** Java package root (source folder) category */
   JAVA_PACKAGE_ROOT("Source Folders", SharedImages.JAVA_PACKAGE_ROOT),

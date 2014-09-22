@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="focusEventType">
  *   &lt;complexContent>
  *     &lt;extension base="{}countEventType">
- *       &lt;attribute name="activitySession" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="focusSession" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>

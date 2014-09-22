@@ -93,12 +93,12 @@ public class FocusTracker extends AbstractTracker<FocusEvent> {
 			IWorkbenchWindow win = WorkbenchUtil.getActiveWindow();
 			if (WorkbenchUtil.isActiveShell(win)) {
 				//System.out.println("click/key");
-				focusActivityAddData();
+				focusAddData();
 			}
 		}
 	};
 	
-	private void focusActivityAddData() {
+	private void focusAddData() {
 		DateTime curr = new DateTime();
 		//System.out.println(curr.getHourOfDay());
 		addData(new FocusEvent(curr, String.valueOf(curr.getHourOfDay())));	
@@ -169,6 +169,7 @@ public class FocusTracker extends AbstractTracker<FocusEvent> {
 				public void run() {
 					widget.removeListener(SWT.KeyDown, focuslistener);
 					widget.removeListener(SWT.MouseDown, focuslistener);
+					widget.removeListener(SWT.MouseWheel, focuslistener);
 				}
 
 			});

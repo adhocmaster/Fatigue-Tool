@@ -97,6 +97,11 @@ public class Keys {
   public static final IKey<String> ACTIVITY_SESSION = Key.create();
   
   /**
+   * Key for a activity session.
+   */
+  public static final IKey<String> FOCUS_SESSION = Key.create();
+  
+  /**
    * Key for a edit speed.
    */
   public static final IKey<Double> EDIT_SPEED = Key.create();

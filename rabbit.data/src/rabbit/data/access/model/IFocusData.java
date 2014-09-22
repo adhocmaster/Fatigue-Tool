@@ -15,8 +15,6 @@
  */
 package rabbit.data.access.model;
 
-import org.eclipse.ui.IWorkbenchPartDescriptor;
-import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 
 /**
@@ -40,9 +38,9 @@ public interface IFocusData extends IData {
   static final IKey<WorkspaceStorage> WORKSPACE = Keys.WORKSPACE;
   
   /**
-   * Key for a activity session.
+   * Key for a focus session.
    */
-  public static final IKey<String> ACTIVITY_SESSION = Keys.ACTIVITY_SESSION;
+  public static final IKey<String> FOCUS_SESSION = Keys.FOCUS_SESSION;
   
   /**
    * Key for the execution count.

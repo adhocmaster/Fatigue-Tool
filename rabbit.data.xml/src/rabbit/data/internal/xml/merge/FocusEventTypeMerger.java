@@ -15,11 +15,10 @@
  */
 package rabbit.data.internal.xml.merge;
 
-import rabbit.data.internal.xml.schema.events.ActivityEventType;
 import rabbit.data.internal.xml.schema.events.FocusEventType;
 
 /**
- * Merger for {@link ActivityEventType}.
+ * Merger for {@link FocusEventType}.
  */
 public class FocusEventTypeMerger extends AbstractMerger<FocusEventType> {
   

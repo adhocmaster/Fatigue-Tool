@@ -42,16 +42,16 @@ public class FocusData implements IFocusData {
    * Constructor.
    * @param date The date of the session.
    * @param workspace The workspace of the session.
-   * @param activitySession The launch configuration.
-   * @param count The count of the activity.
+   * @param focusSession The launch configuration.
+   * @param count The count of the focus.
    * @throws NullPointerException If any of the arguments are null.
    */
   public FocusData(LocalDate date, WorkspaceStorage workspace,
-		String activitySession, int count) {
+		String focusSession, int count) {
 	  data = new KeyMapBuilder()
       .put(DATE,      		   checkNotNull(date,      "date"))
       .put(WORKSPACE, 		   checkNotNull(workspace, "workspace"))
-      .put(ACTIVITY_SESSION,   checkNotNull(activitySession,   "activitySession"))
+      .put(FOCUS_SESSION,   checkNotNull(focusSession,   "focusSession"))
       .put(COUNT,   		   checkNotNull(count,   "count"))
       .build();
   }

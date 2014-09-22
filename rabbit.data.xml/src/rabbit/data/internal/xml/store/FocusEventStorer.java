@@ -15,28 +15,23 @@
  */
 package rabbit.data.internal.xml.store;
 
+import java.util.List;
+
+import javax.xml.datatype.XMLGregorianCalendar;
+
 import rabbit.data.internal.xml.IDataStore;
 import rabbit.data.internal.xml.StoreNames;
 import rabbit.data.internal.xml.convert.IConverter;
 import rabbit.data.internal.xml.merge.IMerger;
-import rabbit.data.internal.xml.schema.events.ActivityEventListType;
-import rabbit.data.internal.xml.schema.events.ActivityEventType;
-import rabbit.data.internal.xml.schema.events.CommandEventListType;
-import rabbit.data.internal.xml.schema.events.CommandEventType;
 import rabbit.data.internal.xml.schema.events.EventListType;
 import rabbit.data.internal.xml.schema.events.FocusEventListType;
 import rabbit.data.internal.xml.schema.events.FocusEventType;
-import rabbit.data.store.model.ActivityEvent;
 import rabbit.data.store.model.CommandEvent;
 import rabbit.data.store.model.FocusEvent;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
-
-import java.util.List;
-
-import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * Stores {@link CommandEvent}

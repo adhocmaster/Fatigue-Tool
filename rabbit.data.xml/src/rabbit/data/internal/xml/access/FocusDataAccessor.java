@@ -51,7 +51,7 @@ public class FocusDataAccessor extends
    * @throws NullPointerException If any arguments are null.
    */
   @Inject
-  FocusDataAccessor(@Named(StoreNames.ACTIVITY_STORE) IDataStore store) {
+  FocusDataAccessor(@Named(StoreNames.FOCUS_STORE) IDataStore store) {
     super(store);
   }
 
