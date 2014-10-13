@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="rabbit.tracking.trackers">
+      <tracker
+            class="rabbit.tracking.internal.trackers.JavaTracker">
+      </tracker>
+      <tracker
+            class="rabbit.tracking.internal.trackers.UserActivityTracker">
+      </tracker>
+      <tracker
+            class="rabbit.tracking.internal.trackers.FocusEditTracker">
+      </tracker>
+      <tracker
+            class="rabbit.tracking.internal.trackers.ImportTracker">
+      </tracker>
+   </extension>
+
+</plugin>
