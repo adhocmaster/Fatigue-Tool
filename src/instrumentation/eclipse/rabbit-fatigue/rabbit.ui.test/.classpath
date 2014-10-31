@@ -3,8 +3,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="F:/Study_Time/Courses/Thesis/WorkSpace/rabbit-eclipse/lib/org.eclipse.swtbot.eclipse.finder_2.0.0.512-dev-e36.jar"/>
-	<classpathentry exported="true" kind="lib" path="F:/Study_Time/Courses/Thesis/WorkSpace/rabbit-eclipse/lib/org.eclipse.swtbot.junit4_x_2.0.0.512-dev-e36.jar"/>
-	<classpathentry exported="true" kind="lib" path="F:/Study_Time/Courses/Thesis/WorkSpace/rabbit-eclipse/lib/org.eclipse.swtbot.swt.finder_2.0.0.512-dev-e36.jar"/>
+	<classpathentry kind="lib" path="F:/Study_Time/Courses/Thesis/WorkSpace/Git/src/instrumentation/eclipse/rabbit-fatigue/lib/org.eclipse.swtbot.eclipse.finder_2.0.0.512-dev-e36.jar"/>
+	<classpathentry kind="lib" path="F:/Study_Time/Courses/Thesis/WorkSpace/Git/src/instrumentation/eclipse/rabbit-fatigue/lib/org.eclipse.swtbot.junit4_x_2.0.0.512-dev-e36.jar"/>
+	<classpathentry kind="lib" path="F:/Study_Time/Courses/Thesis/WorkSpace/Git/src/instrumentation/eclipse/rabbit-fatigue/lib/org.eclipse.swtbot.swt.finder_2.0.0.512-dev-e36.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
