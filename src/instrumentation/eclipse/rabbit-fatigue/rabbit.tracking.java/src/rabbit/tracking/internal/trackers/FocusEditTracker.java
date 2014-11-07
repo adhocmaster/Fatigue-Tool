@@ -55,7 +55,7 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 	private final Set<StyledText> registeredWidgets;	
 	private boolean mouseUpFlag = true;
 	private ArrayList<Integer[]> mouseCoords = new ArrayList<Integer[]>();
-	DateTimeFormatter fmt = DateTimeFormat.forPattern("dd-MMM-yy hh.mm.ss aa");
+	DateTimeFormatter fmt = DateTimeFormat.forPattern("dd-MMM-yy hh.mm.ss.SS aa");
 	
 	/**
 	 * Listener to listen to mouse wheel input on text widgets of

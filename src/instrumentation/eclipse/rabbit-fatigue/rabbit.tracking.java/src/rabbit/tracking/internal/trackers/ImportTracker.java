@@ -35,6 +35,8 @@ import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import rabbit.data.handler.DataHandler;
 import rabbit.data.store.IStorer;
@@ -86,8 +88,10 @@ public class ImportTracker extends AbstractTracker<ProjectEvent> implements
 
   @Override
   public void postExecuteSuccess(String commandId, Object returnValue) {
+	DateTimeFormatter fmt = DateTimeFormat.forPattern("dd-MMM-yy hh.mm.ss.SS aa");
 	if (lastEvent != null && lastEvent.getCommand().getId().equals(commandId)) {
-      addData(new ProjectEvent(new DateTime(), lastEvent.getCommand().getId(), "Command"));
+      DateTime curr = new DateTime();
+      addData(new ProjectEvent(new DateTime(), lastEvent.getCommand().getId(), "Command " + fmt.print(curr)));
 	}
 	if (lastEvent != null && lastEvent.getCommand().getId().equals(commandId) && commandId.equals(saveCommand)) {
       if(FileTracker.lastFile!=null && FileTracker.lastFile.toString().contains(".java")) {
@@ -117,7 +121,7 @@ public class ImportTracker extends AbstractTracker<ProjectEvent> implements
     	    	        		  	importName += dec.getElementName();
     	    	        		  	if (!registeredImports.contains(importName)) {
     	    	        		  		DateTime curr = new DateTime();
-    	    	        				addData(new ProjectEvent(curr, importName, "Import"));
+    	    	        				addData(new ProjectEvent(curr, importName, "Import " + fmt.print(curr)));
     	    	        		  		registeredImports.add(importName);
     	    	        		  	}
     	    	        		 }
