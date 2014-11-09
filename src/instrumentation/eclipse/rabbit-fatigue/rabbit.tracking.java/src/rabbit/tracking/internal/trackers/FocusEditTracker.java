@@ -33,6 +33,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.joda.time.DateTime;
+import org.joda.time.Interval;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -55,6 +56,7 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 	private final Set<StyledText> registeredWidgets;	
 	private boolean mouseUpFlag = true;
 	private ArrayList<Integer[]> mouseCoords = new ArrayList<Integer[]>();
+	private DateTime lastTime = null;
 	DateTimeFormatter fmt = DateTimeFormat.forPattern("dd-MMM-yy hh.mm.ss.SS aa");
 	
 	/**
@@ -117,22 +119,23 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 		@Override
 		public void mouseDoubleClick(MouseEvent e) {
 			DateTime curr = new DateTime();
-			addData(new FocusEvent(curr, fmt.print(curr), "Mouse Double Click"));			
+			addData(new FocusEvent(curr, fmt.print(curr), "Mouse Double Click - " + e.x +","+e.y));			
 		}
 
 		@Override
 		public void mouseDown(MouseEvent e) {
 			DateTime curr = new DateTime();
-			addData(new FocusEvent(curr, fmt.print(curr), "Mouse Down"));
+			addData(new FocusEvent(curr, fmt.print(curr), "Mouse Down - " + e.x +","+e.y));
 			mouseUpFlag = false;
 			calulateMouseVelocity();
 			mouseCoords.clear();
+			lastTime = curr;
 		}
 
 		@Override
 		public void mouseUp(MouseEvent e) {
 			DateTime curr = new DateTime();
-			addData(new FocusEvent(curr, fmt.print(curr), "Mouse Up"));
+			addData(new FocusEvent(curr, fmt.print(curr), "Mouse Up - " + e.x +","+e.y));
 			mouseUpFlag = true;
 		}
 
@@ -147,10 +150,21 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 			for (int index = mouseCoords.size() - 1; index > 0; index--) {
 				Integer[] coord2 = mouseCoords.get(index);
 				Integer[] coord1 = mouseCoords.get(index - 1);
-				double temp = Math.sqrt(Math.pow((coord2[0] - coord1[0]), 2.0) + Math.pow((coord2[1] - coord1[1]), 2.0));
+				double temp = Math.sqrt(Math.pow((coord2[0] - coord1[0]), 2.0)
+						+ Math.pow((coord2[1] - coord1[1]), 2.0));
 				sum += temp;
-			}			
-			addData(new FocusEvent(curr, fmt.print(curr), "Mouse Velocity - " + sum));
+			}
+
+			if (lastTime != null) {
+				Interval diff = new Interval(lastTime, curr);
+				System.out.println(diff.toDurationMillis());
+				double velocity = (double) (sum / diff.toDurationMillis());
+				addData(new FocusEvent(curr, fmt.print(curr),
+						"Mouse Velocity - " + velocity));
+				addData(new FocusEvent(curr, fmt.print(curr),
+						"Mouse Acceleration - "
+								+ (double) (velocity / diff.toDurationMillis())));
+			}
 		}
 	}
 	
