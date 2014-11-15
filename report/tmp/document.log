@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=latex 2014.1.28)  31 OCT 2014 19:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.24)  15 NOV 2014 00:08
 entering extended mode
 **document.tex
 (F:\Study_Time\Courses\Thesis\WorkSpace\Git\report\document.tex
@@ -33,10 +33,18 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: dvips.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count79
 ))
 \Gin@req@height=\dimen102
 \Gin@req@width=\dimen103
@@ -75,13 +83,13 @@ Package: amsbsy 1999/11/29 v1.2d
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count79
+\inf@bad=\count80
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count80
-\leftroot@=\count81
+\uproot@=\count81
+\leftroot@=\count82
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count82
-\DOTSCASE@=\count83
+\classnum@=\count83
+\DOTSCASE@=\count84
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -90,15 +98,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen108
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count84
-\c@MaxMatrixCols=\count85
+\macc@depth=\count85
+\c@MaxMatrixCols=\count86
 \dotsspace@=\muskip10
-\c@parentequation=\count86
-\dspbrk@lvl=\count87
+\c@parentequation=\count87
+\dspbrk@lvl=\count88
 \tag@help=\toks17
-\row@=\count88
-\column@=\count89
-\maxfields@=\count90
+\row@=\count89
+\column@=\count90
+\maxfields@=\count91
 \andhelp@=\toks18
 \eqnshift@=\dimen109
 \alignsep@=\dimen110
@@ -122,22 +130,22 @@ Excerpts were taken from (Journal Style) 'esub2acm.cls'.
 \footheight=\dimen115
 \@maxsep=\dimen116
 \@dblmaxsep=\dimen117
-\aucount=\count91
-\originalaucount=\count92
+\aucount=\count92
+\originalaucount=\count93
 \auwidth=\dimen118
 \auskip=\dimen119
-\auskipcount=\count93
+\auskipcount=\count94
 \auskip=\dimen120
 \allauboxes=\dimen121
 \addauthors=\toks21
-\addauflag=\count94
+\addauflag=\count95
 \subtitletext=\toks22
-\savesection=\count95
-\sectioncntr=\count96
-\c@figure=\count97
-\c@table=\count98
+\savesection=\count96
+\sectioncntr=\count97
+\c@figure=\count98
+\c@table=\count99
 \titleboxnotes=\toks23
-\titleboxnoteflag=\count99
+\titleboxnoteflag=\count100
 Document Class: acm_proc_article-sp 2009/04/22 - V3.2SP - based on esub2acm.sty
  <23 April 96>
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
@@ -147,26 +155,26 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
 )
 \@acmtitlebox=\box28
-\titlenotecount=\count100
+\titlenotecount=\count101
 \tntoks=\toks24
 \tntokstwo=\toks25
 \tntoksthree=\toks26
 \tntoksfour=\toks27
 \tntoksfive=\toks28
-\catcount=\count101
+\catcount=\count102
 \copyrightnotice=\toks29
 \conf=\toks30
 \confinfo=\toks31
-\c@part=\count102
-\c@section=\count103
-\c@subsection=\count104
-\c@subsubsection=\count105
-\c@paragraph=\count106
+\c@part=\count103
+\c@section=\count104
+\c@subsection=\count105
+\c@subsubsection=\count106
+\c@paragraph=\count107
 
 Using 'Abbrev' bibliography style
 LaTeX Info: Redefining \cite on input line 1236.
 \bibindent=\dimen122
-\colcntr=\count107
+\colcntr=\count108
 \saveb@x=\box29
 \copyrtyr=\toks32
 \acmcopyr=\toks33
@@ -197,118 +205,177 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Try loading font information for U+msa on input line 91.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count109
+\scratchdimen=\dimen123
+\scratchbox=\box30
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen124
+\MPnumerator=\count113
+\makeMPintoPDFobject=\count114
+\everyMPtoPDFconversion=\toks37
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 91.
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 91.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 65.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-Overfull \hbox (4.21034pt too wide) in paragraph at lines 126--129
-[][]\T1/aer/m/n/9 Subjective feel-ings of fa-tigue in per-form-ing gen-eral tas
-ks
- []
-
-[1
+) [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-File: age.png Graphic file (type eps)
- <age.png>
-Overfull \hbox (12.0pt too wide) in paragraph at lines 214--215
- [][][] 
+Overfull \hbox (1.51962pt too wide) in paragraph at lines 217--223
+\T1/aer/m/n/9 ort-ing pro-gram-mers' per-for-mance and to re-solve the dilemma
  []
 
-File: sevFreq.png Graphic file (type eps)
-<sevFreq.png>
-Overfull \hbox (12.0pt too wide) in paragraph at lines 232--233
- [][][] 
- []
+<age.png, id=11, 518.93875pt x 383.4325pt>
+File: age.png Graphic file (type png)
+ <use age.png>
+Package pdftex.def Info: age.png used on input line 237.
+(pdftex.def)             Requested size: 252.0pt x 186.19856pt.
 
-File: factors.png Graphic file (type eps)
-<factors.png>
 Overfull \hbox (12.0pt too wide) in paragraph at lines 237--238
  [][][] 
  []
 
-File: tired.png Graphic file (type eps)
-<tired.png>
-Overfull \hbox (12.0pt too wide) in paragraph at lines 242--243
+
+Overfull \hbox (25.1443pt too wide) in paragraph at lines 243--257
  [][][] 
  []
 
-File: influenced.png Graphic file (type eps)
-<influenced.png>
-Overfull \hbox (12.0pt too wide) in paragraph at lines 252--253
+<sevFreq.png, id=12, 518.93875pt x 383.4325pt>
+File: sevFreq.png Graphic file (type png)
+ <use sevFreq.png>
+Package pdftex.def Info: sevFreq.png used on input line 269.
+(pdftex.def)             Requested size: 252.0pt x 186.19856pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 269--270
  [][][] 
  []
 
-[2]
-Overfull \hbox (3.53763pt too wide) in paragraph at lines 262--262
+<factors.png, id=13, 687.31781pt x 496.10344pt>
+File: factors.png Graphic file (type png)
+ <use factors.png>
+Package pdftex.def Info: factors.png used on input line 274.
+(pdftex.def)             Requested size: 252.0pt x 181.89001pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 274--275
+ [][][] 
+ []
+
+<tired.png, id=14, 518.93875pt x 383.4325pt>
+File: tired.png Graphic file (type png)
+ <use tired.png>
+Package pdftex.def Info: tired.png used on input line 279.
+(pdftex.def)             Requested size: 252.0pt x 186.19856pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 279--280
+ [][][] 
+ []
+
+<influenced.png, id=15, 675.27281pt x 502.87875pt>
+File: influenced.png Graphic file (type png)
+ <use influenced.png>
+Package pdftex.def Info: influenced.png used on input line 289.
+(pdftex.def)             Requested size: 252.0pt x 187.66594pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 289--290
+ [][][] 
+ []
+
+[2] [3 <F:/Study_Time/Courses/Thesis/WorkSpace/Git/report/age.png> <F:/Study_Ti
+me/Courses/Thesis/WorkSpace/Git/report/sevFreq.png> <F:/Study_Time/Courses/Thes
+is/WorkSpace/Git/report/factors.png> <F:/Study_Time/Courses/Thesis/WorkSpace/Gi
+t/report/tired.png>]
+Overfull \hbox (3.53763pt too wide) in paragraph at lines 299--299
 []\secfnt Experimental Val-i-da-tion: In-stru-men-ta-tion 
  []
 
 
-Overfull \hbox (2.05023pt too wide) in paragraph at lines 268--277
-\T1/aer/m/n/9 https://code.google.com/p/rabbit-eclipse/. Alike Rab-
+Overfull \hbox (2.01567pt too wide) in paragraph at lines 304--312
+\T1/aer/m/it/9 http://www4.ncsu.edu/ ssarkar4/fatigue/eclipse/updatesite/ 
  []
 
 
-Overfull \hbox (27.09702pt too wide) in paragraph at lines 268--277
-\T1/aer/m/n/9 http://www4.ncsu.edu/ ssarkar4/fatigue/eclipse/updatesite/ 
+Overfull \hbox (4.31895pt too wide) in paragraph at lines 394--395
+[][]\T1/aer/m/n/9 Building a model and clas-si-fy-ing men-tal fa-tigue [TODO] 
  []
 
-File: focus.png Graphic file (type eps)
-<focus.png>
-Overfull \hbox (12.0pt too wide) in paragraph at lines 293--294
- [][][] 
- []
+[4 <F:/Study_Time/Courses/Thesis/WorkSpace/Git/report/influenced.png>]
+<focusCurveHack.png, id=31, 949.29657pt x 546.54187pt>
+File: focusCurveHack.png Graphic file (type png)
 
-[3]
-Overfull \hbox (4.31895pt too wide) in paragraph at lines 319--320
+<use focusCurveHack.png>
+Package pdftex.def Info: focusCurveHack.png used on input line 398.
+(pdftex.def)             Requested size: 504.0pt x 290.16618pt.
+ <focusCurve510.png, id=32, 951.555pt x 549.55313pt>
+File: focusCurve510.png Graphic file (type png)
+
+<use focusCurve510.png>
+Package pdftex.def Info: focusCurve510.png used on input line 416.
+(pdftex.def)             Requested size: 504.0pt x 291.07729pt.
+
+Overfull \hbox (4.31895pt too wide) in paragraph at lines 420--421
 [][]\T1/aer/m/n/9 Building a model and clas-si-fy-ing men-tal fa-tigue [TODO] 
  []
 
 
-Overfull \hbox (4.31895pt too wide) in paragraph at lines 341--342
-[][]\T1/aer/m/n/9 Building a model and clas-si-fy-ing men-tal fa-tigue [TODO] 
- []
-
-
-Overfull \hbox (11.90338pt too wide) in paragraph at lines 357--362
+Overfull \hbox (11.90338pt too wide) in paragraph at lines 440--445
 \T1/aer/m/n/9 through in-stru-men-ta-tion, self-reporting mech-a-nisms (gen-
  []
 
 
-Overfull \hbox (1.53798pt too wide) in paragraph at lines 396--397
+Overfull \hbox (1.53798pt too wide) in paragraph at lines 479--480
 [][]\T1/aer/m/n/9 Analysing their work pat-terns & daily rou-tines [TODO] 
  []
 
 
-Overfull \hbox (3.1843pt too wide) in paragraph at lines 405--410
+Overfull \hbox (3.1843pt too wide) in paragraph at lines 488--493
 [][]\T1/aer/m/n/9 After set-ting the base-line and rec-og-niz-ing fa-tigue stat
 es,
  []
 
-[4] (F:\Study_Time\Courses\Thesis\WorkSpace\Git\report\document.bbl) [5
+[5] [6 <F:/Study_Time/Courses/Thesis/WorkSpace/Git/report/focusCurveHack.png> <
+F:/Study_Time/Courses/Thesis/WorkSpace/Git/report/focusCurve510.png>]
+(F:\Study_Time\Courses\Thesis\WorkSpace\Git\report\document.bbl) [7
 
 ]
 (F:\Study_Time\Courses\Thesis\WorkSpace\Git\report\document.aux) ) 
 Here is how much of TeX's memory you used:
- 1838 strings out of 493922
- 21025 string characters out of 3144893
- 81784 words of memory out of 3000000
- 5118 multiletter control sequences out of 15000+200000
- 41318 words of font info for 52 fonts, out of 3000000 for 9000
+ 2470 strings out of 493921
+ 29906 string characters out of 3144870
+ 92065 words of memory out of 3000000
+ 5719 multiletter control sequences out of 15000+200000
+ 50604 words of font info for 68 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 39i,10n,28p,226b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,10n,28p,256b,297s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw
+/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/u
+tmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
 
-Output written on document.dvi (5 pages, 29480 bytes).
+Output written on document.pdf (7 pages, 212993 bytes).
+PDF statistics:
+ 73 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+
