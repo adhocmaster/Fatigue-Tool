@@ -40,7 +40,7 @@ Questions about your fatigue and work performance.
 2. Switch to other tasks until you regain your concentration
 3. Stop working and rest
 
-### Do you feel when you are tired that it influences your performance? If yes, what are some examples?
+### Do you feel when you are tired that it influences your work? If yes, what are some examples?
 > {rows:5}
 
 ### What makes to conclude that your performance is deteriorating or you need a break at the moment?
