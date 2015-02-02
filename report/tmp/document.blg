@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: document.aux
+The style file: abbrv.bst
+Database file #1: doc.bib
+Repeated entry---line 42 of file doc.bib
+ : @article{larson:cogFailures
+ :                            ,
+I'm skipping whatever remains of this entry
+Name 1 in "Lauren Aaronson, Cynthia Teel, Virginia Cassmeyer, Geri Neuberger, Leonie Pallikkathayil, Janet Pierce, Allan Press, Phoebe Williams, and Anita Wingate" has a comma at the end for entry lauren:defining
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Lauren Aaronson, Cynthia Teel, Virginia Cassmeyer, Geri Neuberger, Leonie Pallikkathayil, Janet Pierce, Allan Press, Phoebe Williams, and Anita Wingate" for entry lauren:defining
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Lauren Aaronson, Cynthia Teel, Virginia Cassmeyer, Geri Neuberger, Leonie Pallikkathayil, Janet Pierce, Allan Press, Phoebe Williams, and Anita Wingate" for entry lauren:defining
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Lauren Aaronson, Cynthia Teel, Virginia Cassmeyer, Geri Neuberger, Leonie Pallikkathayil, Janet Pierce, Allan Press, Phoebe Williams, and Anita Wingate" for entry lauren:defining
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Lauren Aaronson, Cynthia Teel, Virginia Cassmeyer, Geri Neuberger, Leonie Pallikkathayil, Janet Pierce, Allan Press, Phoebe Williams, and Anita Wingate" for entry lauren:defining
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Lauren Aaronson, Cynthia Teel, Virginia Cassmeyer, Geri Neuberger, Leonie Pallikkathayil, Janet Pierce, Allan Press, Phoebe Williams, and Anita Wingate" for entry lauren:defining
+while executing---line 1049 of file abbrv.bst
+Name 1 in "Schneiderman B, and Mayer JE" has a comma at the end for entry schneiderman:interaction
+while executing---line 1049 of file abbrv.bst
+Name 1 in ""Rocco E, and Igou B."" has a comma at the end for entry rocco:gartner
+while executing---line 1049 of file abbrv.bst
+Name 1 in "Larson GE, Alderton DL, Neideffer M, and Underhill E" has a comma at the end for entry larson:cogFailures
+while executing---line 1049 of file abbrv.bst
+Name 1 in "Iftikhar Ahmed Khan, and Willem-Paul Brinkman" has a comma at the end for entry khan:mood
+while executing---line 1049 of file abbrv.bst
+Name 1 in "André Pimenta, Davide Carneiro, Paulo Novais, and José Neves" has a comma at the end for entry pimenta:monitor
+while executing---line 1049 of file abbrv.bst
+Name 1 in "André Pimenta, Davide Carneiro, Paulo Novais, and José Neves" has a comma at the end for entry pimenta:analysis
+while executing---line 1049 of file abbrv.bst
+Name 1 in "Smith AP, Brockman P, Flynn R, Maben A, and Thomas M" has a comma at the end for entry smith:coffee
+while executing---line 1049 of file abbrv.bst
+Too many commas in name 1 of "Smith AP, Brockman P, Flynn R, Maben A, and Thomas M" for entry smith:coffee
+while executing---line 1049 of file abbrv.bst
+Name 1 in "Coetzer GH, and Richmond L" has a comma at the end for entry richmond:team
+while executing---line 1049 of file abbrv.bst
+Name 1 in "André Pimenta, Davide Carneiro, Paulo Novais, and José Neves" has a comma at the end for entry pimenta:monitor
+while executing---line 1090 of file abbrv.bst
+Name 1 in "André Pimenta, Davide Carneiro, Paulo Novais, and José Neves" has a comma at the end for entry pimenta:analysis
+while executing---line 1090 of file abbrv.bst
+Name 1 in "Schneiderman B, and Mayer JE" has a comma at the end for entry schneiderman:interaction
+while executing---line 1090 of file abbrv.bst
+Name 1 in ""Rocco E, and Igou B."" has a comma at the end for entry rocco:gartner
+while executing---line 1090 of file abbrv.bst
+Name 1 in "Coetzer GH, and Richmond L" has a comma at the end for entry richmond:team
+while executing---line 1090 of file abbrv.bst
+Name 1 in "Iftikhar Ahmed Khan, and Willem-Paul Brinkman" has a comma at the end for entry khan:mood
+while executing---line 1090 of file abbrv.bst
+Name 1 in "Larson GE, Alderton DL, Neideffer M, and Underhill E" has a comma at the end for entry larson:cogFailures
+while executing---line 1090 of file abbrv.bst
+Name 1 in "Lauren Aaronson, Cynthia Teel, Virginia Cassmeyer, Geri Neuberger, Leonie Pallikkathayil, Janet Pierce, Allan Press, Phoebe Williams, and Anita Wingate" has a comma at the end for entry lauren:defining
+while executing---line 1090 of file abbrv.bst
+Too many commas in name 1 of "Lauren Aaronson, Cynthia Teel, Virginia Cassmeyer, Geri Neuberger, Leonie Pallikkathayil, Janet Pierce, Allan Press, Phoebe Williams, and Anita Wingate" for entry lauren:defining
+while executing---line 1090 of file abbrv.bst
+Too many commas in name 1 of "Lauren Aaronson, Cynthia Teel, Virginia Cassmeyer, Geri Neuberger, Leonie Pallikkathayil, Janet Pierce, Allan Press, Phoebe Williams, and Anita Wingate" for entry lauren:defining
+while executing---line 1090 of file abbrv.bst
+Too many commas in name 1 of "Lauren Aaronson, Cynthia Teel, Virginia Cassmeyer, Geri Neuberger, Leonie Pallikkathayil, Janet Pierce, Allan Press, Phoebe Williams, and Anita Wingate" for entry lauren:defining
+while executing---line 1090 of file abbrv.bst
+Too many commas in name 1 of "Lauren Aaronson, Cynthia Teel, Virginia Cassmeyer, Geri Neuberger, Leonie Pallikkathayil, Janet Pierce, Allan Press, Phoebe Williams, and Anita Wingate" for entry lauren:defining
+while executing---line 1090 of file abbrv.bst
+Too many commas in name 1 of "Lauren Aaronson, Cynthia Teel, Virginia Cassmeyer, Geri Neuberger, Leonie Pallikkathayil, Janet Pierce, Allan Press, Phoebe Williams, and Anita Wingate" for entry lauren:defining
+while executing---line 1090 of file abbrv.bst
+Name 1 in "Smith AP, Brockman P, Flynn R, Maben A, and Thomas M" has a comma at the end for entry smith:coffee
+while executing---line 1090 of file abbrv.bst
+Too many commas in name 1 of "Smith AP, Brockman P, Flynn R, Maben A, and Thomas M" for entry smith:coffee
+while executing---line 1090 of file abbrv.bst
+(There were 31 error messages)

@@ -1,0 +1,116 @@
+Fatigue is one of the 13 mood states \cite{stone:fatigue}. Stress causes
+emotions and mood swings.
+
+  \begin{enumerate}
+   		\item Exhausted \& Drowsy
+   		\begin{enumerate}
+   		  \item Sleepiness
+   		  \item Restlessness
+   		  \item Feeling tired
+   		  \item Sluggish
+   		  \item Lethargy
+   		\end{enumerate}
+   		\item Mental decline
+   		\begin{enumerate}
+   		  \item Nervousness
+   		  \item Unwillingness
+   		  \item Lack of focus
+   		  \item Absentmindedness
+   		  \item Anxiety
+   		  \item Weariness
+   		\end{enumerate}
+   		\item Incongruity in body \& nervous systems
+   		\begin{enumerate}
+   		  \item Physical Strength
+   		  \item Pain in limbs
+   		  \item Strain in eyes
+   		  \item Dizziness
+   		\end{enumerate}
+\end{enumerate}
+
+
+  \begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth,natwidth=517,natheight=382]{age.png}
+	\caption{Age distribution of the survey participants.}
+  \end{figure}
+
+
+
+The survey questions can be found in Table ~\ref{table:survey}.
+  \begin{table*}
+	\centering
+	\caption{Survey Questions}
+	\begin{tabular}{|c|c|l|} \hline
+		S.No.&Part&Questions\\ \hline
+		S1 & Sleep & How many hours do you sleep typically, in a day?\\ \hline
+		S2 & & How long did you sleep last night?\\ \hline
+		S3 & & What are the factors, you think, lead to mental fatigue in your life
+		mostly? \\ \hline S4 & Fatigue at Work & Do you think fatigue is a severe and
+		frequent problem for programmers? \\ \hline S5 & & Do you feel when you are
+		tired that it influences your performance? If yes, what are some examples? \\
+		\hline S6 & & What makes to conclude that your performance is deteriorating or
+		you need a break at the moment?\\ \hline S7 & Work & Describe your daily work
+		routine. Does this routine occur during the morning, afternoon, or night? \\
+		\hline S8 & & What factors might reduce your energy/concentration level as you
+		code, throughout the day? \\ \hline S9 & & Age: \\ \hline
+		\end{tabular}
+		\label{table:survey}
+	\end{table*}
+
+
+
+\begin{itemize}
+	\item Commands - How often you use each commands (cut, copy, paste etc), do you
+	know which is your favorite?
+	\item Editors and Views - Time spent using different
+	tool within Eclipse, such as Java Editor, Outline view.
+	\item Perspectives - Time spent using different perspectives.
+	\item Sessions - Time spent using Eclipse.
+	\item Resources - Time spent working on difference resources such as files,
+	projects.
+	\item Java Elements - Time spent working on Java elements such as classes,
+	methods.
+	\item Launches - Launches such application runs, debug runs etc, and the
+	relevant files will be recorded too when you step into them using the
+	debugging.
+	\item Task - Time spent working on tasks (tasks in Task List view) and
+	resources.
+\end{itemize}
+
+
+\begin{table}
+		\centering
+		\caption{Indicators of mental fatigue}
+		\begin{tabular}{|c|c|l|} \hline
+			\textbf{Features}&\\ \hline
+			Keydown Time&time spent between key down and key up events of a
+			corresponding key\\
+			\hline Key Errors&correc\\ \hline
+			Mouse Velocity\\ \hline
+			Mouse Acceleration\\ \hline
+			Time between Keys\\ \hline
+			Double Click Speed\\ \hline
+			Number of Double Clicks\\ \hline
+			Distance While Clicking\\ \hline	
+			\end{tabular}
+		\label{table:features}
+	\end{table}
+
+\begin{figure*}
+		\centering
+		\includegraphics[width=1\textwidth,natwidth=1264,natheight=730]{focusCurve510.png}
+		\caption{Focus Curve - CSC 510 Data.}
+  	  \end{figure*}
+
+
+
+
+\section{Discussion}
+\begin{itemize}
+  \item Discussing how the set research guidelines are used in analysis.
+  \item How the user patterns \& analysis results depicts fatique, with 
+  respect to the indicators.
+  \item Discussion about the observations from the result and other methodologies which
+can be used in order to achieve the goal.
+\end{itemize}

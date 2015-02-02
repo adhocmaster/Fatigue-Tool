@@ -1,0 +1,88 @@
+\begin{thebibliography}{10}
+
+\bibitem{pimenta:monitor}
+P.~N. André~Pimenta, Davide~Carneiro and J.~Neves.
+\newblock Monitoring mental fatigue through the analysis of keyboard and mouse
+  interaction patterns.
+\newblock {\em HAIS, LNAI 8073}, pages 222--231, 2013.
+
+\bibitem{pimenta:analysis}
+P.~N. André~Pimenta, Davide~Carneiro and J.~Neves.
+\newblock Analysis of human performance as a measure of mental fatigue.
+\newblock {\em HAIS, LNAI 8480}, pages 389--401, 2014.
+
+\bibitem{schneiderman:interaction}
+S.~B and M.~JE.
+\newblock Syntactic/semantic interaction in programmer behaviour: A model and
+  experimental results.
+\newblock {\em Int J Comput Inf Sci}, 8(3):219--238, 1979.
+
+\bibitem{begel:cards}
+A.~Begel and T.~Zimmermann.
+\newblock Analyze this! 145 questions for data scientists in software
+  engineering.
+\newblock In {\em In Proceedings of the 36th International Conference on
+  Software Engineering (ICSE 2014).}, June 2014.
+
+\bibitem{rocco:gartner}
+R.~E and I.~B.".
+\newblock "the critical role of high-availability infrastructure support
+  services.".
+\newblock Technical report, "Gartner Research, Stamford", "2001".
+
+\bibitem{richmond:team}
+C.~GH and R.~L.
+\newblock Investigation of the effects of coffee on alertness and performance
+  during the day and night.
+\newblock {\em Team Performance Management}, 13(1/2):5--20, 2007.
+
+\bibitem{khan:mood}
+I.~A. Khan and W.-P. Brinkman.
+\newblock Do moods affect programmers' debug performance?
+\newblock {\em Cogn Tech Work}, 13:245--258, February 2011.
+
+\bibitem{larson:cogFailures}
+N.~M. Larson~GE, Alderton~DL and U.~E.
+\newblock Further evidence on dimensionality and correlates of the cognitive
+  failures questionnaire.
+\newblock {\em Br J Psychol}, 88(1):29--38, 1997.
+
+\bibitem{lauren:defining}
+V.~C. G. N. L. P. J. P. A. P. P.~W. Lauren~Aaronson, Cynthia~Teel and
+  A.~Wingate.
+\newblock Defining and measuring fatigue.
+\newblock {\em Journal Of Nursing Scholarship}, 31(1):45--50, 1999.
+
+\bibitem{website:blog-decision}
+H.~Makabee.
+\newblock Effective software design, August 2011.
+\newblock
+  http://effectivesoftwaredesign.com/2011/08/23/how-decision-fatigue-affects-the-efficacy-of-programmers/.
+
+\bibitem{psychology:paul}
+P.~M. Muchinsky.
+\newblock {\em Psychology Applied to Work}.
+\newblock Wadsworth/Thomson Learning, Belmont, CA, sixth edition, 2010.
+
+\bibitem{website:blog-fatigue}
+D.~Nanghaka.
+\newblock Developer fatigue, August 2012.
+\newblock http://dndannang.blogspot.com/2012/07/developer-fatigue.html.
+
+\bibitem{saito:industry}
+K.~Saito.
+\newblock Measurement of fatigue in industries.
+\newblock {\em Industrial Health}, 37:134--142, 1999.
+
+\bibitem{smith:coffee}
+F.~R. M.~A. Smith~AP, Brockman~P and T.~M.
+\newblock An empirical analysis of the relationship between adult attention
+  deficit and effi-cacy for working in teams.
+\newblock {\em Neuropsychobiology}, 27(4):217--223, 1993.
+
+\bibitem{website:wiki-fatigue}
+Wikipedia.
+\newblock Fatigue (medical), November 2014.
+\newblock http://en.wikipedia.org/wiki/Fatigue\_(medical).
+
+\end{thebibliography}
