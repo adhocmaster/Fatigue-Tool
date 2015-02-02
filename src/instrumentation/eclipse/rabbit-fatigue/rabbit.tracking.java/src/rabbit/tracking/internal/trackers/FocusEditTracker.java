@@ -157,7 +157,7 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 
 			if (lastTime != null) {
 				Interval diff = new Interval(lastTime, curr);
-				System.out.println(diff.toDurationMillis());
+				//System.out.println(diff.toDurationMillis());
 				double velocity = (double) (sum / diff.toDurationMillis());
 				addData(new FocusEvent(curr, fmt.print(curr),
 						"Mouse Velocity - " + velocity));

@@ -41,6 +41,7 @@ public enum DataStore implements IDataStore {
   ACTIVITY_STORE    ("activityEvents"),
   PROJECT_STORE     ("projectEvents"),
   FOCUS_STORE    	("focusEvents"),
+  NAV_STORE    		("navEvents"),
   PART_STORE        ("partEvents"),
   PERSPECTIVE_STORE ("perspectiveEvents"),
   FILE_STORE        ("fileEvents"),

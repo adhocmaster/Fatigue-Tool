@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
     CommandEventType.class,
     LaunchEventType.class,
     FocusEventType.class,
+    NavEventType.class,
     ProjectEventType.class
 })
 public class CountEventType {

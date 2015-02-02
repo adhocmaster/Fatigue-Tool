@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="commandEvents" type="{}commandEventListType" maxOccurs="unbounded"/>
  *         &lt;element name="activityEvents" type="{}activityEventListType" maxOccurs="unbounded"/>
  *         &lt;element name="focusEvents" type="{}focusEventListType" maxOccurs="unbounded"/>
+ *         &lt;element name="navEvents" type="{}navEventListType" maxOccurs="unbounded"/>
  *         &lt;element name="projectEvents" type="{}projectEventListType" maxOccurs="unbounded"/>
  *         &lt;element name="partEvents" type="{}partEventListType" maxOccurs="unbounded"/>
  *         &lt;element name="fileEvents" type="{}fileEventListType" maxOccurs="unbounded"/>
@@ -50,6 +51,7 @@ import javax.xml.bind.annotation.XmlType;
     "commandEvents",
     "activityEvents",
     "focusEvents",
+    "navEvents",
     "projectEvents",
     "partEvents",
     "fileEvents",
@@ -67,6 +69,8 @@ public class EventListType {
     protected List<ActivityEventListType> activityEvents;
     @XmlElement(required = true)
     protected List<FocusEventListType> focusEvents;
+    @XmlElement(required = true)
+    protected List<NavEventListType> navEvents;
     @XmlElement(required = true)
     protected List<ProjectEventListType> projectEvents;
     @XmlElement(required = true)
@@ -169,6 +173,35 @@ public class EventListType {
         	focusEvents = new ArrayList<FocusEventListType>();
         }
         return this.focusEvents;
+    }
+    
+    /**
+     * Gets the value of the navEvents property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the commandEvents property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getNavEvents().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link NavEventListType }
+     * 
+     * 
+     */
+    public List<NavEventListType> getNavEvents() {
+        if (navEvents == null) {
+        	navEvents = new ArrayList<NavEventListType>();
+        }
+        return this.navEvents;
     }
     
     /**

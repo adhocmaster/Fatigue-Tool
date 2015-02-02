@@ -22,6 +22,7 @@ import rabbit.data.store.model.FileEvent;
 import rabbit.data.store.model.FocusEvent;
 import rabbit.data.store.model.JavaEvent;
 import rabbit.data.store.model.LaunchEvent;
+import rabbit.data.store.model.NavEvent;
 import rabbit.data.store.model.PartEvent;
 import rabbit.data.store.model.PerspectiveEvent;
 import rabbit.data.store.model.ProjectEvent;
@@ -45,8 +46,9 @@ public class StorerModule extends AbstractModule {
   protected void configure() {
     bind(new TypeLiteral<IStorer<CommandEvent>>     () {}).to(CommandEventStorer.class);
     bind(new TypeLiteral<IStorer<ActivityEvent>>    () {}).to(ActivityEventStorer.class);
-    bind(new TypeLiteral<IStorer<ProjectEvent>>    () {}).to(ProjectEventStorer.class);
+    bind(new TypeLiteral<IStorer<ProjectEvent>>     () {}).to(ProjectEventStorer.class);
     bind(new TypeLiteral<IStorer<FocusEvent>>    	() {}).to(FocusEventStorer.class);
+    bind(new TypeLiteral<IStorer<NavEvent>>    		() {}).to(NavEventStorer.class);
     bind(new TypeLiteral<IStorer<FileEvent>>        () {}).to(FileEventStorer.class);
     bind(new TypeLiteral<IStorer<JavaEvent>>        () {}).to(JavaEventStorer.class);
     bind(new TypeLiteral<IStorer<LaunchEvent>>      () {}).to(LaunchEventStorer.class);

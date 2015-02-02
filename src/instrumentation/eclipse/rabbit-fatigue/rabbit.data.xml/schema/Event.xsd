@@ -13,6 +13,7 @@
       <xs:element name="commandEvents" type="commandEventListType" maxOccurs="unbounded" />
       <xs:element name="activityEvents" type="activityEventListType" maxOccurs="unbounded" />
       <xs:element name="focusEvents" type="focusEventListType" maxOccurs="unbounded" />
+      <xs:element name="navEvents" type="navEventListType" maxOccurs="unbounded" />
       <xs:element name="projectEvents" type="projectEventListType" maxOccurs="unbounded" />
       <xs:element name="partEvents" type="partEventListType" maxOccurs="unbounded" />
       <xs:element name="fileEvents" type="fileEventListType" maxOccurs="unbounded" />
@@ -42,7 +43,7 @@
     </xs:complexContent>
   </xs:complexType>
   
-   <!-- WorkbenchPart Events: -->
+  <!-- WorkbenchPart Events: -->
   <xs:complexType name="focusEventListType">
     <xs:complexContent>
       <xs:extension base="eventGroupType">
@@ -53,6 +54,24 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="focusEventType">
+    <xs:complexContent>
+      <xs:extension base="countEventType">
+        <xs:attribute name="activityId" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- WorkbenchPart Events: -->
+  <xs:complexType name="navEventListType">
+    <xs:complexContent>
+      <xs:extension base="eventGroupType">
+        <xs:sequence>
+          <xs:element name="navEvent" type="navEventType" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="navEventType">
     <xs:complexContent>
       <xs:extension base="countEventType">
         <xs:attribute name="activityId" type="xs:string" use="required" />

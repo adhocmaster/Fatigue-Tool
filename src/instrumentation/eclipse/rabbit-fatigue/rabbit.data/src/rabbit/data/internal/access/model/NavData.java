@@ -23,14 +23,14 @@ import javax.annotation.Nullable;
 
 import org.joda.time.LocalDate;
 
-import rabbit.data.access.model.IFocusData;
+import rabbit.data.access.model.INavData;
 import rabbit.data.access.model.IKey;
 import rabbit.data.access.model.WorkspaceStorage;
 
 /**
  * Contains launch information.
  */
-public class FocusData implements IFocusData {
+public class NavData implements INavData {
   
   /**
    * An immutable map of data.
@@ -46,12 +46,12 @@ public class FocusData implements IFocusData {
    * @param count The count of the focus.
    * @throws NullPointerException If any of the arguments are null.
    */
-  public FocusData(LocalDate date, WorkspaceStorage workspace,
+  public NavData(LocalDate date, WorkspaceStorage workspace,
 		String focusSession, String event, int count) {
 	  data = new KeyMapBuilder()
       .put(DATE,      		   checkNotNull(date,      "date"))
       .put(WORKSPACE, 		   checkNotNull(workspace, "workspace"))
-      .put(FOCUS_SESSION,      checkNotNull(focusSession,   "focusSession"))
+      .put(NAV_SESSION,        checkNotNull(focusSession,   "focusSession"))
       .put(EVENT,   		   checkNotNull(event,   "event"))
       .put(COUNT,   		   checkNotNull(count,   "count"))
       .build();

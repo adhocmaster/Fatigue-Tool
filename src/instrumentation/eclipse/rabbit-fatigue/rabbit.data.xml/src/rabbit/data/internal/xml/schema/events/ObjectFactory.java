@@ -137,6 +137,14 @@ public class ObjectFactory {
     }
     
     /**
+     * Create an instance of {@link NavEventListType }
+     * 
+     */
+    public NavEventListType createNavEventListType() {
+        return new NavEventListType();
+    }
+    
+    /**
      * Create an instance of {@link ProjectEventListType }
      * 
      */

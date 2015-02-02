@@ -21,6 +21,7 @@ import rabbit.data.internal.xml.schema.events.FileEventType;
 import rabbit.data.internal.xml.schema.events.FocusEventType;
 import rabbit.data.internal.xml.schema.events.JavaEventType;
 import rabbit.data.internal.xml.schema.events.LaunchEventType;
+import rabbit.data.internal.xml.schema.events.NavEventType;
 import rabbit.data.internal.xml.schema.events.PartEventType;
 import rabbit.data.internal.xml.schema.events.PerspectiveEventType;
 import rabbit.data.internal.xml.schema.events.ProjectEventType;
@@ -42,6 +43,7 @@ public class MergerModule extends AbstractModule {
     bind(new TypeLiteral<IMerger<CommandEventType>>     () {}).to(CommandEventTypeMerger.class);
     bind(new TypeLiteral<IMerger<ActivityEventType>>    () {}).to(ActivityEventTypeMerger.class);
     bind(new TypeLiteral<IMerger<FocusEventType>>    	() {}).to(FocusEventTypeMerger.class);
+    bind(new TypeLiteral<IMerger<NavEventType>>    		() {}).to(NavEventTypeMerger.class);
     bind(new TypeLiteral<IMerger<ProjectEventType>>    	() {}).to(ProjectEventTypeMerger.class);
     bind(new TypeLiteral<IMerger<FileEventType>>        () {}).to(FileEventTypeMerger.class);
     bind(new TypeLiteral<IMerger<JavaEventType>>        () {}).to(JavaEventTypeMerger.class);

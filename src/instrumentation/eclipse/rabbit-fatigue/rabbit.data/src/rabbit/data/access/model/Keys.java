@@ -102,6 +102,11 @@ public class Keys {
   public static final IKey<String> FOCUS_SESSION = Key.create();
   
   /**
+   * Key for a focus session.
+   */
+  public static final IKey<String> NAV_SESSION = Key.create();
+  
+  /**
    * Key for a project session.
    */
   public static final IKey<String> PROJECT_SESSION = Key.create();

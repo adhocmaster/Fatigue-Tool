@@ -63,6 +63,7 @@ public class DataHandler {
    * <li>{@link ActivityEvent}</li>
    * <li>{@link ProjectEvent}</li>
    * <li>{@link FocusEvent}</li>
+   * <li>{@link NavEvent}</li>
    * <li>{@link PerspectiveEvent}</li>
    * <li>{@link LaunchEvent}</li>
    * <li>{@link TaskFileEvent}</li>
@@ -97,6 +98,7 @@ public class DataHandler {
    * <li>{@link IActivityData}</li>
    * <li>{@link IProjectData}</li>
    * <li>{@link IFocusData}</li>
+   * <li>{@link INavData}</li>
    * <li>{@link ILaunchData}</li>
    * <li>{@link ITaskData}</li>
    * <li>{@link ISessionData}</li>

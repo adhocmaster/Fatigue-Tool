@@ -22,9 +22,10 @@ public class StoreNames {
 
   //@formatter:off
   public static final String COMMAND_STORE     = "CommandStore";
-  public static final String ACTIVITY_STORE     = "ActivityStore";
+  public static final String ACTIVITY_STORE    = "ActivityStore";
   public static final String PROJECT_STORE     = "ProjectStore";
-  public static final String FOCUS_STORE     = "FocusStore";
+  public static final String FOCUS_STORE       = "FocusStore";
+  public static final String NAV_STORE     	   = "NavStore";
   public static final String FILE_STORE        = "FileStore";
   public static final String JAVA_STORE        = "JavaStore";
   public static final String LAUNCH_STORE      = "LaunchStore";

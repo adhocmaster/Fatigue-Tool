@@ -13,7 +13,13 @@
             class="rabbit.tracking.internal.trackers.FocusEditTracker">
       </tracker>
       <tracker
-            class="rabbit.tracking.internal.trackers.ImportTracker">
+            class="rabbit.tracking.internal.trackers.FocusImportTracker">
+      </tracker>
+      <tracker
+            class="rabbit.tracking.internal.trackers.NavFileTracker">
+      </tracker>
+      <tracker
+            class="rabbit.tracking.internal.trackers.NavEditorTracker">
       </tracker>
    </extension>
 

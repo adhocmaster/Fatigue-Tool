@@ -21,6 +21,7 @@ import rabbit.data.internal.xml.schema.events.FileEventType;
 import rabbit.data.internal.xml.schema.events.FocusEventType;
 import rabbit.data.internal.xml.schema.events.JavaEventType;
 import rabbit.data.internal.xml.schema.events.LaunchEventType;
+import rabbit.data.internal.xml.schema.events.NavEventType;
 import rabbit.data.internal.xml.schema.events.PartEventType;
 import rabbit.data.internal.xml.schema.events.PerspectiveEventType;
 import rabbit.data.internal.xml.schema.events.ProjectEventType;
@@ -32,6 +33,7 @@ import rabbit.data.store.model.FileEvent;
 import rabbit.data.store.model.FocusEvent;
 import rabbit.data.store.model.JavaEvent;
 import rabbit.data.store.model.LaunchEvent;
+import rabbit.data.store.model.NavEvent;
 import rabbit.data.store.model.PartEvent;
 import rabbit.data.store.model.PerspectiveEvent;
 import rabbit.data.store.model.ProjectEvent;
@@ -61,6 +63,9 @@ public class ConverterModule extends AbstractModule {
 
     bind(new TypeLiteral<IConverter<FocusEvent, FocusEventType>>() {})
 		.to(FocusEventConverter.class);
+    
+    bind(new TypeLiteral<IConverter<NavEvent, NavEventType>>() {})
+		.to(NavEventConverter.class);
 
     bind(new TypeLiteral<IConverter<FileEvent, FileEventType>>() {})
         .to(FileEventConverter.class);
