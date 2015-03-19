@@ -10,12 +10,12 @@
             class="rabbit.ui.internal.RabbitView"
             icon="icons/full/eview16/rabbitview.png"
             id="rabbit.ui.view.rabbitview"
-            name="Rabbit"
+            name="DevFatigue"
             restorable="true">
       </view>
       <category
             id="rabbit.ui.view"
-            name="Rabbit">
+            name="DevFatigue">
       </category>
    </extension>
    <extension
@@ -103,7 +103,7 @@
       <page
             class="rabbit.ui.internal.pref.RabbitPreferencePage"
             id="rabbit.ui.mainPref"
-            name="Rabbit">
+            name="DevFatigue">
       </page>
    </extension>
    <extension

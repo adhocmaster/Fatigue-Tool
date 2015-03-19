@@ -230,11 +230,21 @@ Unless required by applicable law or agreed to in writing, software distributed 
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.jface.text"/>
       <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.debug.core"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.ui.ide"/>
       <import feature="rabbit.feature" version="1.2.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
          id="rabbit.tracking.java"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="rabbit.selfassessmentdialog"
          download-size="0"
          install-size="0"
          version="0.0.0"

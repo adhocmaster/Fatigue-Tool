@@ -13,8 +13,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.jface.text,
  org.eclipse.jdt.core,
- org.eclipse.debug.core;bundle-version="3.8.0",
  org.eclipse.ui.workbench,
- org.eclipse.ui.ide;bundle-version="3.9.0"
+ org.eclipse.ui.ide,
+ rabbit.selfassessmentdialog;bundle-version="1.2.0",
+ org.eclipse.debug.core;resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: rabbit.tracking.internal.trackers;x-internal:=true
+Import-Package: rabbit.data.internal.xml

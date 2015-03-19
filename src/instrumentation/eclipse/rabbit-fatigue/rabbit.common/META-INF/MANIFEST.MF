@@ -37,4 +37,5 @@ Bundle-ClassPath: lib/commons-io-1.4.jar,
  lib/guice-2.0.jar,
  lib/joda-time-1.6.2.jar,
  lib/jsr305.jar,
+ lib/jsch-0.1.51.jar,
  lib/aopalliance.jar

@@ -31,6 +31,7 @@ import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
@@ -38,8 +39,13 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 import rabbit.data.handler.DataHandler;
+import rabbit.data.internal.xml.XmlPlugin;
 import rabbit.data.store.IStorer;
 import rabbit.data.store.model.FocusEvent;
+import rabbit.selfassessmentdialog.SurveyPlugin;
+import rabbit.selfassessmentdialog.internal.SFTPConnection;
+import rabbit.selfassessmentdialog.ui.views.DailyFormView;
+import rabbit.selfassessmentdialog.ui.views.SessionFormView;
 
 import com.google.common.collect.Sets;
 
@@ -57,6 +63,7 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 	private boolean mouseUpFlag = true;
 	private ArrayList<Integer[]> mouseCoords = new ArrayList<Integer[]>();
 	private DateTime lastTime = null;
+	private DateTime lastActive = null;
 	DateTimeFormatter fmt = DateTimeFormat.forPattern("dd-MMM-yy hh.mm.ss.SS aa");
 	
 	/**
@@ -93,6 +100,11 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 			else {				
 				addData(new FocusEvent(curr, fmt.print(curr), "Key Down - " + e.keyCode));
 			}
+			Thread task = new Thread(new CodeAnalysis(false));
+			task.start();
+			uploadPendingData();
+			openSurveyOnNewSession();
+			checkForDailySurvey();
 		}
 
 		@Override
@@ -181,7 +193,12 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 				coord[0] = e.x;
 				coord[1] = e.y;
 				mouseCoords.add(coord);
-			}			
+			}
+			Thread task = new Thread(new CodeAnalysis(false));
+			task.start();
+			uploadPendingData();
+			openSurveyOnNewSession();
+			checkForDailySurvey();
 		}
 	};
 
@@ -300,4 +317,103 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 			registeredWidgets.add(widget);
 		}
 	}
+
+	private void uploadPendingData() {
+		if(SFTPConnection.uploadInProgress) return;
+		String pending = checkForPendingData();
+		if (pending == null) return;
+		Thread sftpThread = new Thread(new SFTPConnection(pending));
+		sftpThread.start();
+		/*boolean dataUpload = SurveyStorage.sftpUpload(pending);
+		if(dataUpload) {
+			SurveyPlugin.updateDateUploadStatus(pending);
+		}*/
+	}
+	
+	private String checkForPendingData() {
+		return SurveyPlugin.checkForPendingData();
+	}
+
+	private void checkForDailySurvey() {
+		DateTime curr = new DateTime();
+		if(SurveyPlugin.checkDate(curr)) {
+			return;
+		}
+		DateTimeFormatter fmt = DateTimeFormat.forPattern("dd-MMM-yy ");
+		String date = fmt.print(curr);
+		DateTime thresholdTime;
+		
+		if (XmlPlugin.getDefault().getSurveyTimePeriod() == 0) {
+			date = date.concat("12:00");
+		} else if (XmlPlugin.getDefault().getSurveyTimePeriod() == 1) {
+			date = date.concat("16:00");
+		} else if (XmlPlugin.getDefault().getSurveyTimePeriod() == 2) {
+			date = date.concat(XmlPlugin.getDefault().getSurveyFixedTimePeriod());
+		}
+		date = date.concat(":00");
+		DateTimeFormatter datefmt = DateTimeFormat.forPattern("dd-MMM-yy HH:mm:ss");
+		thresholdTime = datefmt.parseDateTime(date);
+		
+		if(curr.isAfter(thresholdTime)) {
+			try {
+				IWorkbenchPage activePage = PlatformUI.getWorkbench()
+						.getActiveWorkbenchWindow().getActivePage();
+				if (activePage.findView(DailyFormView.ID) == null) {
+					// open the view
+					activePage.showView(DailyFormView.ID);
+					// and maximize it
+					activePage.toggleZoom(activePage
+							.findViewReference(DailyFormView.ID));
+				}
+			} catch (PartInitException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	private void openSurveyOnNewSession() {
+		if(lastActive == null) {
+			try {
+				IWorkbenchPage activePage = PlatformUI.getWorkbench()
+						.getActiveWorkbenchWindow().getActivePage();
+				if (activePage.findView(SessionFormView.ID) == null) {
+					// open the view
+					activePage.showView(SessionFormView.ID);
+					// and maximize it
+					activePage.toggleZoom(activePage
+							.findViewReference(SessionFormView.ID));
+				}
+			} catch (PartInitException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			lastActive = new DateTime();
+			return;
+		}
+		else {
+			DateTime curr = new DateTime();
+			Interval diff = new Interval(lastActive, curr);
+			long diffInMins = diff.toDurationMillis() / 60000;
+			if(diffInMins>=15.00) {
+				try {
+					IWorkbenchPage activePage = PlatformUI.getWorkbench()
+							.getActiveWorkbenchWindow().getActivePage();
+					if (activePage.findView(SessionFormView.ID) == null) {
+						// open the view
+						activePage.showView(SessionFormView.ID);
+						// and maximize it
+						activePage.toggleZoom(activePage
+								.findViewReference(SessionFormView.ID));
+					}
+				} catch (PartInitException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			lastActive = curr;
+			return;
+		}
+	  }
 }

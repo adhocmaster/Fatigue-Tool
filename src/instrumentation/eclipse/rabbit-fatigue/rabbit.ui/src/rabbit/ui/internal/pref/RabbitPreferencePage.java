@@ -72,7 +72,7 @@ public class RabbitPreferencePage extends PreferencePage implements
 
     // Contains setting for Rabbit View:
     Group viewGroup = new Group(cmp, SWT.NONE);
-    viewGroup.setText("Rabbit View");
+    viewGroup.setText("DevFatigue View");
     viewGroup.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false));
     viewGroup.setLayout(new GridLayout(3, false));
     {

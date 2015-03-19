@@ -136,7 +136,7 @@ public class StoragePathPreferencePage extends PreferencePage implements
     pathGroup.setLayout(new GridLayout(3, false));
     {
       Label description = new Label(pathGroup, SWT.WRAP);
-      description.setText("Please use a dedicated folder to prevent Rabbit" +
+      description.setText("Please use a dedicated folder to prevent DevFatigue" +
       		" from messing up your files.\nIt's a rabbit after all!");
       GridDataFactory.fillDefaults().span(3, 1).applyTo(description);
 
@@ -156,7 +156,7 @@ public class StoragePathPreferencePage extends PreferencePage implements
       browse.addListener(SWT.Selection, new Listener() {
         @Override public void handleEvent(Event event) {
           DirectoryDialog dialog = new DirectoryDialog(getShell());
-          dialog.setMessage("Select a folder for storing data collected by Rabbit.");
+          dialog.setMessage("Select a folder for storing data collected by DevFatigue.");
 
           String path = dialog.open();
           if (path != null) {

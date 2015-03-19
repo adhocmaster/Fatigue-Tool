@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -52,13 +53,24 @@ public class XmlPlugin extends AbstractUIPlugin {
    * The default location of the storage root.
    */
   private static final String DEFAULT_STORAGE_ROOT = FilenameUtils.concat(
-      System.getProperty("user.home"), "Rabbit");
+      System.getProperty("user.home"), "DevFatigue");
 
   /**
    * Constant string to use with a java.util.Properties to get/set the storage
    * root.
    */
   private static final String PROP_STORAGE_ROOT = "storage.root";
+  
+  private static final String PROP_SURVEY_TIME_PERIOD = "survey.TimePeriod";
+  
+  private static final String PROP_SURVEY_FIXED_TIME_PERIOD = "survey.fixedTime";
+  
+  /**
+   * The default value of the survey time period.
+   */
+  private static final String DEFAULT_SURVEY_TIME_PERIOD = "2";
+  
+  private static final String DEFAULT_SURVEY_FIXED_TIME_PERIOD = "14:00";
 
   public static XmlPlugin getDefault() {
     return plugin;
@@ -84,7 +96,7 @@ public class XmlPlugin extends AbstractUIPlugin {
     File file = path.toFile();
     if (!file.exists() && !file.mkdirs()) {
       getLog().log(new Status(IStatus.ERROR, PLUGIN_ID,
-          "Unable to create folder (" + file + ") for saving Rabbit's data!"));
+          "Unable to create folder (" + file + ") for saving DevFatigue's data!"));
     }
     return path;
   }
@@ -97,6 +109,24 @@ public class XmlPlugin extends AbstractUIPlugin {
    */
   public IPath getStoragePathRoot() {
     return Path.fromOSString(properties.getProperty(PROP_STORAGE_ROOT));
+  }
+  
+  /**
+   * Gets the selection of survey time in the day to show up.
+   * 
+   * @return The survey time period.
+   */
+  public int getSurveyTimePeriod() {
+    return Integer.parseInt(properties.getProperty(PROP_SURVEY_TIME_PERIOD));
+  }
+  
+  /**
+   * Gets the fixed selection of survey time in the day to show up.
+   * 
+   * @return The fixed survey time period.
+   */
+  public String getSurveyFixedTimePeriod() {
+    return properties.getProperty(PROP_SURVEY_FIXED_TIME_PERIOD);
   }
 
   /**
@@ -150,6 +180,22 @@ public class XmlPlugin extends AbstractUIPlugin {
 
     properties.setProperty(PROP_STORAGE_ROOT, dir.getAbsolutePath());
     return true;
+  }
+  
+  /**
+   * Sets the default number of days to display the data in the main view.
+   * 0 = start of the day
+   * 1 = end of the day
+   * 2 = fixed
+   * 
+   * @param numDays The number of days.
+   */
+  public void setSurveyTimePeriod(int numSelection) {
+	properties.setProperty(PROP_SURVEY_TIME_PERIOD, String.valueOf(numSelection));
+  }
+  
+  public void setSurveyFixedTimePeriod(String time) {
+		properties.setProperty(PROP_SURVEY_FIXED_TIME_PERIOD, time);
   }
 
   @Override
@@ -208,6 +254,14 @@ public class XmlPlugin extends AbstractUIPlugin {
   private void checkProperties(Properties prop) {
     if (prop.getProperty(PROP_STORAGE_ROOT) == null) {
       prop.setProperty(PROP_STORAGE_ROOT, DEFAULT_STORAGE_ROOT);
+    }
+    
+    if (prop.getProperty(PROP_SURVEY_TIME_PERIOD) == null) {
+        prop.setProperty(PROP_SURVEY_TIME_PERIOD, DEFAULT_SURVEY_TIME_PERIOD);
+    }
+    
+    if (prop.getProperty(PROP_SURVEY_FIXED_TIME_PERIOD) == null) {
+        prop.setProperty(PROP_SURVEY_FIXED_TIME_PERIOD, DEFAULT_SURVEY_FIXED_TIME_PERIOD);
     }
 
     // Maps the name of the storage folder for this workspace with the actual

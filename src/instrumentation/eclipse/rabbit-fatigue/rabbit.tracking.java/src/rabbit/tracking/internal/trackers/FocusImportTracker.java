@@ -35,6 +35,7 @@ import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 import org.joda.time.DateTime;
+import org.joda.time.Interval;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -94,7 +95,29 @@ public class FocusImportTracker extends AbstractTracker<ProjectEvent> implements
       addData(new ProjectEvent(new DateTime(), lastEvent.getCommand().getId(), "Command " + fmt.print(curr)));
 	}
 	if (lastEvent != null && lastEvent.getCommand().getId().equals(commandId) && commandId.equals(saveCommand)) {
-      if(FileTracker.lastFile!=null && FileTracker.lastFile.toString().contains(".java")) {
+			
+		if(checkFlag())
+		{
+				// Static Code Analysis
+				IWorkspace workspace = ResourcesPlugin.getWorkspace();
+				IWorkspaceRoot root = workspace.getRoot();
+				// Get all projects in the workspace
+				IProject[] projects = root.getProjects();
+				// Loop over all projects
+				for (IProject project : projects) {
+					try {
+						if (project
+								.isNatureEnabled("org.eclipse.jdt.core.javanature")) {
+							CodeAnalysis.checkStyleAnal(root.getLocation()
+									.toString() + project.getFullPath(), project.getName());
+						}
+					} catch (CoreException e) {
+						e.printStackTrace();
+					}
+				}
+
+		}
+      if(NavFileTracker.lastFile!=null && NavFileTracker.lastFile.toString().contains(".java")) {
     	  IWorkspace workspace = ResourcesPlugin.getWorkspace();
     	    IWorkspaceRoot root = workspace.getRoot();
     	    // Get all projects in the workspace
@@ -115,9 +138,9 @@ public class FocusImportTracker extends AbstractTracker<ProjectEvent> implements
     	    	        	  else {
     	    	        		  currUnit = "/" + project.getName() + "/src/" + mypackage.getElementName() + "/" + unit.getElementName();
     	    	        	  }
-    	    	        	  if (currUnit.equals(FileTracker.lastFile.toString())) {
+    	    	        	  if (currUnit.equals(NavFileTracker.lastFile.toString())) {
     	    	        		 for (IImportDeclaration dec : unit.getImports()) {
-    	    	        		  	String importName = FileTracker.lastFile.toString() + "}";
+    	    	        		  	String importName = NavFileTracker.lastFile.toString() + "}";
     	    	        		  	importName += dec.getElementName();
     	    	        		  	if (!registeredImports.contains(importName)) {
     	    	        		  		DateTime curr = new DateTime();
@@ -128,9 +151,7 @@ public class FocusImportTracker extends AbstractTracker<ProjectEvent> implements
     	    	        		 break;
     	    	        	  }
     	    	           }
-
     	    	        }
-
     	    	      }
     	    	    }
     	      } catch (CoreException e) {
@@ -141,7 +162,25 @@ public class FocusImportTracker extends AbstractTracker<ProjectEvent> implements
     }
   }
 
-  @Override
+  private boolean checkFlag() {
+	if(NavFileTracker.lastSave == null) {
+		NavFileTracker.lastSave = new DateTime();
+		return true;
+	}
+	else {
+		DateTime curr = new DateTime();
+		Interval diff = new Interval(NavFileTracker.lastSave, curr);
+		long diffInMins = diff.toDurationMillis() / 60000;
+		if(diffInMins>30.00) {
+			NavFileTracker.lastSave = curr;
+			return true;
+		}
+		else
+			return false;
+	}
+  }
+
+@Override
   public void preExecute(String commandId, ExecutionEvent event) {
     lastEvent = event;
   }

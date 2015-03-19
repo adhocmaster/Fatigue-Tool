@@ -40,6 +40,7 @@ public class NavFileTracker extends AbstractPartTracker<NavEvent> {
 
 	
   public static IPath lastFile;
+  public static DateTime lastSave;
   /**
    * Constructor.
    */

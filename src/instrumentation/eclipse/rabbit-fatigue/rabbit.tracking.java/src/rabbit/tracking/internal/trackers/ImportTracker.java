@@ -94,7 +94,7 @@ public class ImportTracker extends AbstractTracker<ProjectEvent> implements
       addData(new ProjectEvent(new DateTime(), lastEvent.getCommand().getId(), "Command " + fmt.print(curr)));
 	}
 	if (lastEvent != null && lastEvent.getCommand().getId().equals(commandId) && commandId.equals(saveCommand)) {
-      if(FileTracker.lastFile!=null && FileTracker.lastFile.toString().contains(".java")) {
+      if(NavFileTracker.lastFile!=null && NavFileTracker.lastFile.toString().contains(".java")) {
     	  IWorkspace workspace = ResourcesPlugin.getWorkspace();
     	    IWorkspaceRoot root = workspace.getRoot();
     	    // Get all projects in the workspace
@@ -115,9 +115,9 @@ public class ImportTracker extends AbstractTracker<ProjectEvent> implements
     	    	        	  else {
     	    	        		  currUnit = "/" + project.getName() + "/src/" + mypackage.getElementName() + "/" + unit.getElementName();
     	    	        	  }
-    	    	        	  if (currUnit.equals(FileTracker.lastFile.toString())) {
+    	    	        	  if (currUnit.equals(NavFileTracker.lastFile.toString())) {
     	    	        		 for (IImportDeclaration dec : unit.getImports()) {
-    	    	        		  	String importName = FileTracker.lastFile.toString() + "}";
+    	    	        		  	String importName = NavFileTracker.lastFile.toString() + "}";
     	    	        		  	importName += dec.getElementName();
     	    	        		  	if (!registeredImports.contains(importName)) {
     	    	        		  		DateTime curr = new DateTime();
@@ -128,9 +128,7 @@ public class ImportTracker extends AbstractTracker<ProjectEvent> implements
     	    	        		 break;
     	    	        	  }
     	    	           }
-
     	    	        }
-
     	    	      }
     	    	    }
     	      } catch (CoreException e) {
