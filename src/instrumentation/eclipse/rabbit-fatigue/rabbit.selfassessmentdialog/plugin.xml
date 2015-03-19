@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+      <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Survey Category"
+            id="SelfAssessmentDialog">
+      </category>
+      <view
+            name="Daily Survey"
+            icon="icons/res.gif"
+            category="rabbit.ui.view"
+            class="rabbit.selfassessmentdialog.ui.views.DailyFormView"
+            id="rabbit.selfassessmentdialog.ui.views.DailyFormView">
+      </view>
+      <view
+            name="Session Survey"
+            icon="icons/res.gif"
+            category="rabbit.ui.view"
+            class="rabbit.selfassessmentdialog.ui.views.SessionFormView"
+            id="rabbit.selfassessmentdialog.ui.views.SessionFormView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="rabbit.ui.mainPref"
+            class="rabbit.selfassessmentdialog.ui.pref.SurveyPreferencePage"
+            id="rabbit.selfassessmentdialog.ui.pref.SurveyPreferencePage"
+            name="Survey Preferences">
+      </page>
+   </extension>
+
+</plugin>
