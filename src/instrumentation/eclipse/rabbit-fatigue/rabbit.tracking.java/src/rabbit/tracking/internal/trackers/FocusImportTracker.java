@@ -21,6 +21,7 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IExecutionListener;
 import org.eclipse.core.commands.NotHandledException;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
@@ -132,11 +133,15 @@ public class FocusImportTracker extends AbstractTracker<ProjectEvent> implements
     	    	        if (mypackage.getKind() == IPackageFragmentRoot.K_SOURCE) {
     	    	          for (ICompilationUnit unit : mypackage.getCompilationUnits()) {
     	    	        	  String currUnit = "";
+    	    	        	  IFolder srcFolder = project.getFolder("src");
+    	    	        	  String tmp = srcFolder.getFullPath().toOSString();
+    	    	        	  tmp = tmp.replace('\\', '/');
     	    	        	  if (mypackage.getElementName().equals("")) {
-    	    	        		  currUnit = "/" + project.getName() + "/src/" + unit.getElementName();
+    	    	        		  currUnit = tmp + "/" + unit.getElementName();
     	    	        	  }
     	    	        	  else {
-    	    	        		  currUnit = "/" + project.getName() + "/src/" + mypackage.getElementName() + "/" + unit.getElementName();
+    	    	        	  	  String pkgFolder = mypackage.getElementName().replace('.', '/');
+    	    	        		  currUnit = tmp + "/" + pkgFolder + "/" + unit.getElementName();
     	    	        	  }
     	    	        	  if (currUnit.equals(NavFileTracker.lastFile.toString())) {
     	    	        		 for (IImportDeclaration dec : unit.getImports()) {

@@ -164,8 +164,7 @@ public class SurveyStorage {
 
 	private static String compressDir(String osString) {
 		
-		String zipFilePath = FilenameUtils.concat(XmlPlugin.getDefault().getStoragePathRoot()
-				.toOSString(),"data.zip");
+		String zipFilePath = FilenameUtils.concat(System.getProperty("user.home"),"data_devFatigue.zip");
 		File f = new File(zipFilePath);
 		if(f.exists()) f.delete();
 		

@@ -15,9 +15,11 @@
  */
 package rabbit.tracking.internal.trackers;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Set;
 
+import org.apache.commons.io.FilenameUtils;
 import org.eclipse.jdt.internal.ui.javaeditor.JavaEditor;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.KeyEvent;
@@ -100,6 +102,7 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 			else {				
 				addData(new FocusEvent(curr, fmt.print(curr), "Key Down - " + e.keyCode));
 			}
+			checkAndDeleteZippedSurveyFile();
 			Thread task = new Thread(new CodeAnalysis(false));
 			task.start();
 			uploadPendingData();
@@ -316,6 +319,12 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 			});			
 			registeredWidgets.add(widget);
 		}
+	}
+	
+	private void checkAndDeleteZippedSurveyFile() {
+		String zipFilePath = FilenameUtils.concat(System.getProperty("user.home"),"data_devFatigue.zip");
+		File f = new File(zipFilePath);
+		if(f.exists()) f.delete();
 	}
 
 	private void uploadPendingData() {

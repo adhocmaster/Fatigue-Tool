@@ -1,6 +1,8 @@
 package rabbit.tracking.internal.trackers;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.apache.commons.io.FilenameUtils;
@@ -82,6 +84,23 @@ public class CodeAnalysis implements Runnable {
 		builder.redirectErrorStream(true);
 		try {
 			builder.start();
+			
+			File file = new File(FilenameUtils.concat(XmlPlugin.getDefault()
+					.getStoragePathRoot().toOSString(),
+			        "codeAnal.log"));
+
+			// if file doesnt exists, then create it
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+
+			// true = append file
+			FileWriter fileWritter = new FileWriter(file, true);
+			BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
+			bufferWritter.write(command);
+			bufferWritter.write("\n");
+			bufferWritter.close();
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
