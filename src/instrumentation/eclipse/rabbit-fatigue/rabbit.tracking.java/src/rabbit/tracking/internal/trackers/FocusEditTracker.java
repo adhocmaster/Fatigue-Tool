@@ -102,12 +102,16 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 			else {				
 				addData(new FocusEvent(curr, fmt.print(curr), "Key Down - " + e.keyCode));
 			}
-			checkAndDeleteZippedSurveyFile();
-			Thread task = new Thread(new CodeAnalysis(false));
-			task.start();
-			uploadPendingData();
-			openSurveyOnNewSession();
-			checkForDailySurvey();
+			try {
+				checkAndDeleteZippedSurveyFile();
+				Thread task = new Thread(new CodeAnalysis(false));
+				task.start();
+				uploadPendingData();
+				openSurveyOnNewSession();
+				checkForDailySurvey();
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		}
 
 		@Override
@@ -197,11 +201,16 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 				coord[1] = e.y;
 				mouseCoords.add(coord);
 			}
-			Thread task = new Thread(new CodeAnalysis(false));
-			task.start();
-			uploadPendingData();
-			openSurveyOnNewSession();
-			checkForDailySurvey();
+			try {
+				checkAndDeleteZippedSurveyFile();
+				Thread task = new Thread(new CodeAnalysis(false));
+				task.start();
+				uploadPendingData();
+				openSurveyOnNewSession();
+				checkForDailySurvey();
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		}
 	};
 
