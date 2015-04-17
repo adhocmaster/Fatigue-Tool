@@ -104,11 +104,11 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 			}
 			try {
 				checkAndDeleteZippedSurveyFile();
+				openSurveyOnNewSession();
+				uploadPendingData();
+				checkForDailySurvey();
 				Thread task = new Thread(new CodeAnalysis(false));
 				task.start();
-				uploadPendingData();
-				openSurveyOnNewSession();
-				checkForDailySurvey();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -203,11 +203,11 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 			}
 			try {
 				checkAndDeleteZippedSurveyFile();
+				openSurveyOnNewSession();
+				uploadPendingData();
+				checkForDailySurvey();
 				Thread task = new Thread(new CodeAnalysis(false));
 				task.start();
-				uploadPendingData();
-				openSurveyOnNewSession();
-				checkForDailySurvey();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -331,21 +331,33 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 	}
 	
 	private void checkAndDeleteZippedSurveyFile() {
-		String zipFilePath = FilenameUtils.concat(System.getProperty("user.home"),"data_devFatigue.zip");
-		File f = new File(zipFilePath);
-		if(f.exists()) f.delete();
+		try {
+			String zipFilePath = FilenameUtils.concat(
+					System.getProperty("user.home"), "data_devFatigue.zip");
+			File f = new File(zipFilePath);
+			if (f.exists())
+				f.delete();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	private void uploadPendingData() {
-		if(SFTPConnection.uploadInProgress) return;
-		String pending = checkForPendingData();
-		if (pending == null) return;
-		Thread sftpThread = new Thread(new SFTPConnection(pending));
-		sftpThread.start();
-		/*boolean dataUpload = SurveyStorage.sftpUpload(pending);
-		if(dataUpload) {
-			SurveyPlugin.updateDateUploadStatus(pending);
-		}*/
+		try {
+			if (SFTPConnection.uploadInProgress)
+				return;
+			String pending = checkForPendingData();
+			if (pending == null)
+				return;
+			Thread sftpThread = new Thread(new SFTPConnection(pending));
+			sftpThread.start();
+			/*
+			 * boolean dataUpload = SurveyStorage.sftpUpload(pending);
+			 * if(dataUpload) { SurveyPlugin.updateDateUploadStatus(pending); }
+			 */
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 	
 	private String checkForPendingData() {
@@ -393,6 +405,7 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 	
 	private void openSurveyOnNewSession() {
 		if(lastActive == null) {
+			lastActive = new DateTime();
 			try {
 				IWorkbenchPage activePage = PlatformUI.getWorkbench()
 						.getActiveWorkbenchWindow().getActivePage();
@@ -406,14 +419,14 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 			} catch (PartInitException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-			lastActive = new DateTime();
+			}			
 			return;
 		}
 		else {
 			DateTime curr = new DateTime();
 			Interval diff = new Interval(lastActive, curr);
 			long diffInMins = diff.toDurationMillis() / 60000;
+			lastActive = curr;
 			if(diffInMins>=15.00) {
 				try {
 					IWorkbenchPage activePage = PlatformUI.getWorkbench()
@@ -429,8 +442,7 @@ public class FocusEditTracker extends AbstractTracker<FocusEvent> {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}
-			lastActive = curr;
+			}			
 			return;
 		}
 	  }
