@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=latex 2014.1.28)  19 MAR 2015 07:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=latex 2015.4.17)  18 APR 2015 19:51
 entering extended mode
 **document.tex
 (F:\Study_Time\Courses\Thesis\WorkSpace\Git\report\document.tex
@@ -14,28 +14,28 @@ ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
 (F:\Study_Time\Courses\Thesis\WorkSpace\Git\report\acm_proc_article-sp.cls
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: dvips.def on input line 91.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\dvips.def"
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen102
@@ -44,10 +44,10 @@ File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 \epsfxsize=\dimen104
 \epsfysize=\dimen105
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks15
 \symAMSa=\mathgroup4
@@ -55,24 +55,24 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip41
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen106
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen107
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count79
@@ -140,7 +140,7 @@ Excerpts were taken from (Journal Style) 'esub2acm.cls'.
 \titleboxnoteflag=\count99
 Document Class: acm_proc_article-sp 2009/04/22 - V3.2SP - based on esub2acm.sty
  <23 April 96>
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\latexsym.sty"
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
@@ -172,16 +172,16 @@ LaTeX Info: Redefining \cite on input line 1236.
 \acmcopyr=\toks33
 \boilerplate=\toks34
 \copyrightetc=\toks35
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )
 LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
 (F:\Study_Time\Courses\Thesis\WorkSpace\Git\report\document.aux
@@ -202,17 +202,17 @@ LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Try loading font information for U+msa on input line 65.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+lasy on input line 65.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -250,34 +250,34 @@ Overfull \hbox (9.21846pt too wide) in paragraph at lines 321--321
  []
 
 
-Overfull \hbox (8.34943pt too wide) in paragraph at lines 365--371
+Overfull \hbox (8.34943pt too wide) in paragraph at lines 366--372
 \T1/aer/m/n/9 for de-vel-op-ers to work to-wards solv-ing a prob-lem. A hackath
 on
  []
 
 
-Underfull \hbox (badness 3514) in paragraph at lines 385--386
+Underfull \hbox (badness 3514) in paragraph at lines 386--387
 \T1/aer/m/n/9 fected your per-for-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--387
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
 []\T1/aer/m/n/9 Hours slept/rested
  []
 
 
-Underfull \hbox (badness 4467) in paragraph at lines 386--387
+Underfull \hbox (badness 4467) in paragraph at lines 387--388
 \T1/aer/m/n/9 dur-ing the hack-a-
  []
 
 
-Underfull \hbox (badness 3029) in paragraph at lines 387--388
+Underfull \hbox (badness 3029) in paragraph at lines 388--389
 []\T1/aer/m/n/9 Do you think you
  []
 
 File: focusCurveHack.png Graphic file (type eps)
 <focusCurveHack.png>
-Underfull \hbox (badness 10000) in paragraph at lines 424--429
+Underfull \hbox (badness 10000) in paragraph at lines 425--430
 
  []
 
@@ -288,18 +288,18 @@ Underfull \vbox (badness 3108) has occurred while \output is active []
 [5]
 File: timebwkeys.png Graphic file (type eps)
  <timebwkeys.png>
-Overfull \hbox (12.0pt too wide) in paragraph at lines 508--510
+Overfull \hbox (12.0pt too wide) in paragraph at lines 509--511
  [][][] 
  []
 
 
-Overfull \hbox (4.29253pt too wide) in paragraph at lines 497--513
+Overfull \hbox (4.29253pt too wide) in paragraph at lines 498--514
 [][]\T1/aer/m/it/9 Time be-tween Keys\T1/aer/m/n/9 : Spear-man Cor-re-la-tion =
  0.7032088 
  []
 
 
-Overfull \hbox (4.13042pt too wide) in paragraph at lines 513--522
+Overfull \hbox (4.13042pt too wide) in paragraph at lines 514--523
 [][]\T1/aer/m/it/9 Time be-tween Clicks\T1/aer/m/n/9 : Spear-man Cor-re-la-tion
  = 0.737913 
  []
@@ -314,11 +314,11 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  1852 strings out of 493922
- 21285 string characters out of 3144893
+ 21009 string characters out of 3147299
  81784 words of memory out of 3000000
  5133 multiletter control sequences out of 15000+200000
  41318 words of font info for 52 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  39i,10n,28p,226b,270s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on document.dvi (7 pages, 50628 bytes).
+Output written on document.dvi (7 pages, 50820 bytes).
